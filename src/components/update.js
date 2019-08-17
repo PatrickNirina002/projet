@@ -8,11 +8,6 @@ class Modifier extends React.Component {
     this.state = {
      titre: '',
      description:'',
-      date:'',
-      debut:'',
-      dure:'',
-      place_dispo:'',
-      place_reserve:'',
       prix:'',
      image:''
 
@@ -48,18 +43,13 @@ class Modifier extends React.Component {
     data.append('image', this.uploadInput.files[0]);
     data.append('titre',this.state.titre);
     data.append('description',this.state.description);
-    data.append('date',this.state.date);
-    data.append('debut',this.state.debut);
-    data.append('dure',this.state.dure);
-    data.append('place_dispo',this.state.place_dispo);
-    data.append('place_reserve',this.state.place_reserve);
     data.append('prix',this.state.prix);
-    fetch('https://finaly-s.herokuapp.com/profil/'+this.props.match.params._id, {
+    fetch('http://localhost:8080/profil/'+this.props.match.params._id, {
       method: 'PUT',
       body: data,
     }).then((response) => {
       response.json().then((body) => {
-        this.setState({ image: `https://finaly-s.herokuapp.com/profil/${body.image}` });
+        this.setState({ image: `http://localhost:8080/profil/${body.image}` });
         console.log('ity ilay body.fil',body.image);
        
       });
@@ -67,11 +57,6 @@ class Modifier extends React.Component {
     this.setState({
       titre: '',
       description:'',
-       date:'',
-       debut:'',
-       dure:'',
-       place_dispo:'',
-      place_reserve:'',
       prix:'',
        image:''
     })
@@ -97,41 +82,6 @@ class Modifier extends React.Component {
           value={this.state.value}
           onChange={this.onChange}
           name="description"  required/><br></br></div>
-          <div className="form-group">
-        <label>date:</label>
-        <input type="date" id='champ'
-        className="form-control"
-          value={this.state.value}
-          onChange={this.onChange}
-          name="date"  required/><br></br> </div>
-          <div className="form-group">
-          <label>Debut:</label>
-        <input type="time" id='champ'
-        className="form-control"
-          value={this.state.value}
-          onChange={this.onChange}
-          name="debut"  required/><br></br> </div>
-          <div className="form-group">
-          <label>Durée:</label>
-        <input type="time" id='champ'
-        className="form-control"
-          value={this.state.value}
-          onChange={this.onChange}
-          name="dure"  required/><br></br>  </div>
-          <div className="form-group"></div> 
-          <label>Nombre de place disponible:</label>
-        <input type="text" id='champ'
-        className="form-control"
-          value={this.state.value}
-          onChange={this.onChange}
-          name="place_dispo" required/><br></br> 
-          <div className="form-group">
-          <label>Nombre de place reservée:</label>
-        <input type="text" id='champ'
-        className="form-control"
-          value={this.state.value}
-          onChange={this.onChange}
-          name="place_reserve" required/><br></br> </div> 
           <div className="form-group"> 
           <label>Prix:</label>
         <input type="text"  id='champ'

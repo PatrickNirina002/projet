@@ -1,11 +1,13 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
+import {BrowserRouter as Router, Route, Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { logoutUser } from '../actions/authentication';
 import { withRouter } from 'react-router-dom';
 import Slider from './slider'
 import image from './logobe.png'
+import FooterPage from './footer';
+// import Chacun from './chacun';
 import { MDBNavbar, MDBNavbarNav, MDBNavItem, MDBNavLink, MDBNavbarToggler, MDBCollapse, MDBDropdown} from "mdbreact";
 class Navbar extends Component {
 
@@ -84,45 +86,72 @@ class Navbar extends Component {
 
 
           <div >
-<div id="top-nav" class="navbar navbar-inverse navbar-static-top eto">
-    <div class="container-fluid">
-        <div class="navbar-header">
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            
-        </div>
-        <div class="navbar-collapse collapse">
-            <ul class="nav navbar-nav navbar-right">
-                <li class="dropdown">
-                    
-                    <ul >
-                    <li><a href="a" to='/login' onClick={this.onLogout.bind(this)}  id="conect"><i class="fa fa-sign-out"></i> Deconnexion</a></li>
-                    </ul>
-                </li>
 
-            </ul>
-        </div>
-    </div>
+
+
+<nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
+ <button class="navbar-toggler navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+
+<div class="collapse navbar-collapse" id="navbarResponsive">
+  <ul class="navbar-nav navbar-sidenav">
+
+      <a class="nav-link navlogo text-center" href="index.php">
+        <img src="https://vignette.wikia.nocookie.net/nationstates/images/2/29/WS_Logo.png/revision/latest?cb=20080507063620"/>
+      </a>
+
+    <li class="nav-item">
+      <Link class="nav-link sidefrst li" to={"/affichepho/"+localStorage.getItem('id')}>
+        <span class="textside">Profil</span>
+      </Link>
+    </li>
+    <li class="nav-item">
+    <Link class="nav-link sidesforth li" to="/">
+      <span class="textside">Liste de rendez-vous</span>
+    </Link>
+    </li>
+
+    <li class="nav-item">
+      <Link class="nav-link sidesecnd li"   to="/atelier">
+        <span class="textside">Ajouter de réparation</span>
+      </Link>
+    </li>
+    <li class="nav-item">
+      <Link class="nav-link sidesthrd li" to={"/register/"+localStorage.getItem('id')}>
+        <span class="textside">Liste de réparation</span>
+      </Link>
+    </li>
+   
+    <li class="nav-item">
+      <a class="nav-link sidesfifth li" href="quotation.php">
+        <span class="textside">Gestion</span>
+      </a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link sidesix li" href="service.php">
+        <span class="textside">  Services</span>
+      </a>
+    </li>
+  </ul>
+  
+  <ul class="navbar-nav2 ml-auto">
+    <li class="dropdown">
+      <a href="#" class="dropdown-toggle" data-toggle="dropdown">Welcome WaLia</a>
+        <ul class="dropdown-menu">
+            <li class="resflset li"><a href="profile.php"><i class="fa fa-fw fa-cog"></i> Edit profile</a></li>
+            <li class="divider"></li>
+            <li class="resflset li"><a href="#"  to='/login' onClick={this.onLogout.bind(this)} ><i     class="fa fa-fw fa-power-off"></i> Logout</a></li>
+        </ul>
+    </li>
+  </ul>
+  
+</div>
+</nav>
+
+<div className="espace">
+
 
 </div>
-
-
-<div class="col-lg-2 col-md-2 col-sm-3 col-xs-12" id ="aaa">
-
-    <ul className="midina" >
-        <Link  to='/bienvenue' className='sac'> A propos</Link><br/><br/>
-        <Link to={"/atelier"}  className='sac'>Ajouter de l'atelier</Link><br/><br/>
-        <Link to={"/register/"+localStorage.getItem('id')} className='sac'> Liste des ateliers</Link><br/><br/>
-        {/* <li><a href="a"><i class="fa fa-lock"></i> Change Password</a></li><br/><br/> */}
-
-    </ul>
 </div>
-
-</div>
-
         )
       const guestLinks = (
         // <ul className="navbar-nav ml-auto">
@@ -167,6 +196,7 @@ class Navbar extends Component {
  </MDBNavbar>
  </div>
   <div className="slider"><Slider/></div> 
+   
    </div>
 
       )

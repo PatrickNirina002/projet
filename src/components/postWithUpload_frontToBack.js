@@ -10,11 +10,6 @@ class PostFrontToBack extends React.Component {
     this.state = {
      titre: '',
      description:'',
-      date:'',
-      debut:'',
-      dure:'',
-      place_dispo:'',
-      place_reserve:'',
       prix:'',
      image:''
 
@@ -50,18 +45,13 @@ class PostFrontToBack extends React.Component {
     data.append('image', this.uploadInput.files[0]);
     data.append('titre',this.state.titre);
     data.append('description',this.state.description);
-    data.append('date',this.state.date);
-    data.append('debut',this.state.debut);
-    data.append('dure',this.state.dure);
-    data.append('place_dispo',this.state.place_dispo);
-    data.append('place_reserve',this.state.place_reserve);
     data.append('prix',this.state.prix);
-    fetch('https://finaly-s.herokuapp.com/register/'+localStorage.getItem('id'), {
+    fetch('http://localhost:8080/register/'+localStorage.getItem('id'), {
       method: 'POST',
       body: data,
     }).then((response) => {
       response.json().then((body) => {
-        this.setState({ image: `https://finaly-s.herokuapp.com/register/${body.image}` });
+        this.setState({ image: `http://localhost:8080/register/${body.image}` });
         console.log('ity ilay body.fil',body.image);
        
       });
@@ -87,41 +77,6 @@ class PostFrontToBack extends React.Component {
           value={this.state.value}
           onChange={this.onChange}
           name="description"  /><br></br></div>
-          <div className="form-group">
-        <label>date:</label>
-        <input type="date" id='champ'
-        className="form-control"
-          value={this.state.value}
-          onChange={this.onChange}
-          name="date"  /><br></br> </div>
-          <div className="form-group">
-          <label>Debut:</label>
-        <input type="time" id='champ'
-        className="form-control"
-          value={this.state.value}
-          onChange={this.onChange}
-          name="debut"  /><br></br> </div>
-          <div className="form-group">
-          <label>Durée:</label>
-        <input type="time" id='champ'
-        className="form-control"
-          value={this.state.value}
-          onChange={this.onChange}
-          name="dure"  /><br></br>  </div>
-          <div className="form-group"></div> 
-          <label>Nombre de place disponible:</label>
-        <input type="text" id='champ'
-        className="form-control"
-          value={this.state.value}
-          onChange={this.onChange}
-          name="place_dispo" /><br></br> 
-          <div className="form-group">
-          <label>Nombre de place reservée:</label>
-        <input type="text" id='champ'
-        className="form-control"
-          value={this.state.value}
-          onChange={this.onChange}
-          name="place_reserve"   /><br></br> </div> 
           <div className="form-group"> 
           <label>Prix:</label>
         <input type="text" id='champ'
