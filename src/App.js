@@ -15,10 +15,15 @@ import PostFrontToBack from './components/postWithUpload_frontToBack';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Inscrire from './components/inscrire';
 import Modifier from './components/update';
-import FooterPage from './components/footer';
+
 import Bienvenue from './components/bienvenue';
 import Vide from './components/bienvenue';
 import PrivateRoute from './components/cahe';
+import Prof from './components/profi';
+import Photo from './components/photo';
+import AffPhoto from './components/affichePhoto';
+import AffichePho from './components/affichePho';
+import ModifPho from './components/modifPho';
 // import Slider from './components/slider'
 //import Admin from './components/Admin';
 if(localStorage.jwtToken) {
@@ -55,10 +60,14 @@ class App extends Component {
                     <PrivateRoute exact path="/admin"  component={Vide} />
                     
                   </switch>
-                   
+                  <Route exact path="/prof/:_id" component={ Prof } />
+                  <Route exact path="/photo/:_id" component={ Photo } /> 
+                  <Route exact path="/affichephoto/:_id" component={ AffPhoto } />
+                  <Route exact path="/affichepho/:_id" component={ AffichePho } />
+                  <Route path="/profi/:_id"  component={ModifPho} />
                   {/* <Route path="/dash"  component={Admin} ></Route> */}
                 </div>
-                <FooterPage/>
+              
             </div>
           </Router>
         </Provider>

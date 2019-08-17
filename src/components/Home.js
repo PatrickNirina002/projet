@@ -12,7 +12,7 @@ export default class Home extends Component {
 
     }
     componentDidMount() {
-        axios.get('https://finaly-s.herokuapp.com/affichertous')
+        axios.get('http://localhost:8080/affichertous')
             .then(response => {
                 console.log(response.data);
                 this.setState({ profil: response.data });
@@ -44,13 +44,8 @@ export default class Home extends Component {
 
   
   <h4 class="card-title" id="titrebe"><center>{obj.titre}</center> </h4>
-  <div className="container"><img width="90%" height="300px" src={'https://finaly-s.herokuapp.com/user/'+obj.image} alt="pdp" /></div>
+  <div className="container"><img width="90%" height="300px" src={'http://localhost:8080/user/'+obj.image} alt="pdp" /></div>
   <p class="card-text"><span>Description:</span> {obj.description}</p>
-  <p class="card-text"><span>Date:</span>{obj.date}</p>
-  <p class="card-text"><span>Horaire de debut:</span>{obj.debut}</p>
-  <p class="card-text"><span>Durée:</span> {obj.dure}</p>
-  <p class="card-text"><span>Nombre de place disponible:</span>{obj.place_dispo}</p>
-  <p class="card-text"><span>Nombre de place reserve:</span> {obj.place_reserve}</p>
   <p class="card-text"><span>Prix:</span> {obj.prix}<span>$</span></p>
   <Link className="btn btn-danger " id="metykosa" to={"/particulier/"+obj._id} onClick={()=>{
       console.log(obj.id2);

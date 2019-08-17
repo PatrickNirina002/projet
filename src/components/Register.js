@@ -12,7 +12,8 @@ class Register extends Component {
         this.state = {
             name: '',
             prenom:'',
-            email: '',           
+            email: '',
+            garage:'',           
             password: '',
             password_confirm: '',
             errors: {}
@@ -33,6 +34,7 @@ class Register extends Component {
             name: this.state.name,
             prenom: this.state.prenom,
             email: this.state.email,
+            garage: this.state.garage,
             password: this.state.password,
             password_confirm: this.state.password_confirm
         }
@@ -86,6 +88,17 @@ class Register extends Component {
                     />
                    
                 </div>
+                <div className="form-group">
+                <input
+                type="text"
+                placeholder="Nom de garage"
+                className={classnames('form-control form-control-lg')}
+                name="garage"
+                onChange={ this.handleInputChange }
+                value={ this.state.garage }
+                />
+               
+            </div>
                 <div className="form-group">
                     <input
                     type="email"

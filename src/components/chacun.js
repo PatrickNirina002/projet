@@ -16,7 +16,7 @@ export default class Chacun extends Component {
   
 
     componentDidMount() {
-        axios.get('https://finaly-s.herokuapp.com'+this.props.location.pathname)
+        axios.get('http://localhost:8080'+this.props.location.pathname)
             .then(response => {
                 console.log(response.data);
                 this.setState({ profil: response.data });
@@ -52,13 +52,8 @@ export default class Chacun extends Component {
       localStorage.setItem('atelier',obj._id);
       
   }}><center>{obj.titre}</center> </h4>
-  <img width="100%" height="300px" src={'https://finaly-s.herokuapp.com/user/'+obj.image} alt="pdp" />
+  <img width="100%" height="300px" src={'http://localhost:8080/user/'+obj.image} alt="pdp" />
   <p class="card-text">Description: {obj.description}</p>
-  <p class="card-text">Date: {obj.date}</p>
-  <p class="card-text">Horaire de debut: {obj.debut}</p>
-  <p class="card-text">Durée: {obj.dure}</p>
-  <p class="card-text">Nombre de place disponible: {obj.place_dispo}</p>
-  <p class="card-text">Nombre de place reserve: {obj.place_reserve}</p>
   <p class="card-text" onClick={()=>{
 console.log(obj.visibilite);
 
@@ -73,7 +68,7 @@ console.log(obj.visibilite);
      
   {obj.visibilite===true ?(<button onClick={(e)=>{
              e.preventDefault()
-            axios.get("https://finaly-s.herokuapp.com/masquer/"+obj._id).then(res=>{
+            axios.get("http://localhost:8080/masquer/"+obj._id).then(res=>{
                  axios.get('http://metyza-cuisine.herokuapp.com/register/'+ localStorage.getItem('id')).then(res=>{
             console.log(res.data)
             this.setState({profil:res.data})
@@ -84,8 +79,8 @@ console.log(obj.visibilite);
          }} className="btn btn-danger">Desactiver</button>):(<button onClick={(e)=>{
             e.preventDefault()
             console.log(obj._id)
-           axios.get("https://finaly-s.herokuapp.com/affichier/"+obj._id).then(res=>{
-  axios.get('https://finaly-s.herokuapp.com/register/'+ localStorage.getItem('id')).then(res=>{
+           axios.get("http://localhost:8080/affichier/"+obj._id).then(res=>{
+  axios.get('http://localhost:8080/register/'+ localStorage.getItem('id')).then(res=>{
             console.log(res.data)
             this.setState({profil:res.data})
         })
