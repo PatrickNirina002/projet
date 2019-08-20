@@ -122,9 +122,9 @@ class Navbar extends Component {
     </li>
    
     <li class="nav-item">
-      <a class="nav-link sidesfifth li" href="quotation.php">
+      <Link class="nav-link sidesfifth li" to={"/affichegestion/"+localStorage.getItem('id')}>
         <span class="textside">Gestion</span>
-      </a>
+      </Link>
     </li>
     <li class="nav-item">
       <a class="nav-link sidesix li" href="service.php">
