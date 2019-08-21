@@ -6,16 +6,16 @@ export default class Inscrire extends Component {
   constructor(props) {
     super(props);
     this.onChangenom = this.onChangenom.bind(this);
-    this.onChangeprenom = this.onChangeprenom.bind(this);
-    this.onChangeemail = this.onChangeemail.bind(this);
-    this.onChangetelephone = this.onChangetelephone.bind(this);
+    this.onChangematricule = this.onChangematricule.bind(this);
+    this.onChangetel = this.onChangetel.bind(this);
+    this.onChangedatej = this.onChangedatej.bind(this);
     this.onSubmit = this.onSubmit.bind(this);
 
     this.state = {
       nom: '',
-      prenom: '',
-      email:'',
-      telephone:''
+      matricule: '',
+      tel:'',
+      datej:''
     }
   }
   onChangenom(e) {
@@ -23,19 +23,19 @@ export default class Inscrire extends Component {
       nom: e.target.value
     });
   }
-  onChangeprenom(e) {
+  onChangematricule(e) {
     this.setState({
-      prenom: e.target.value
+      matricule: e.target.value
     })  
   }
-  onChangeemail(e) {
+  onChangetel(e) {
     this.setState({
-      email: e.target.value
+      tel: e.target.value
     })
   }
-  onChangetelephone(e) {
+  onChangedatej(e) {
     this.setState({
-      telephone: e.target.value
+      datej: e.target.value
     })
   }
 
@@ -43,18 +43,18 @@ export default class Inscrire extends Component {
     e.preventDefault();
     const obj = {
       nom: this.state.nom,
-      prenom: this.state.prenom,
-      email: this.state.email,
-      telephone: this.state.telephone
+      matricule: this.state.matricule,
+      tel: this.state.tel,
+      datej: this.state.datej
     };
-    axios.post('http://localhost:8080/particulier/'+localStorage.getItem('ti'), obj)
+    axios.post('http://localhost:8080/rendre/'+localStorage.getItem('ti'), obj)
         .then(res => console.log(res.data));
     
     this.setState({
       nom: '',
-      prenom: '',
-      email: '',
-      telephone:''
+      matricule: '',
+      tel: '',
+      datej:''
     })
   }
  
@@ -72,27 +72,27 @@ export default class Inscrire extends Component {
                       required/>
                 </div>
                 <div className="form-group">
-                    <label>Prenom: </label>
+                    <label>matricule: </label>
                     <input type="text" id='champ'
                       className="form-control"
-                      value={this.state.prenom}
-                      onChange={this.onChangeprenom}
+                      value={this.state.matricule}
+                      onChange={this.onChangematricule}
                       required/>
                 </div>
                 <div className="form-group">
-                    <label>Email: </label>
-                    <input type="email"  id='champ'
+                    <label>tel: </label>
+                    <input type="tel"  id='champ'
                       className="form-control"
-                      value={this.state.email}
-                      onChange={this.onChangeemail}
+                      value={this.state.tel}
+                      onChange={this.onChangetel}
                       required/>
                 </div>
                 <div className="form-group">
-                    <label>Telephone: </label>
+                    <label>datej: </label>
                     <input type="text"  id='champ'
                       className="form-control"
-                      value={this.state.telephone}
-                      onChange={this.onChangetelephone}
+                      value={this.state.datej}
+                      onChange={this.onChangedatej}
                       required/>
                 </div>
                 <div className="form-group">

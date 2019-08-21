@@ -44,9 +44,9 @@ export default class AffichePho extends Component {
 <div class="container">
     <div class="fb-profile">
         <img align="left" class="fb-image-lg" src="http://lorempixel.com/850/280/nightlife/5/" alt="Profile image example"/>
-        <img align="left" class="fb-image-profile thumbnail" src={'http://localhost:8080/pic/'+obj.pho} alt="Profile image example"/>
+        <img align="left" class="fb-image-profile thumbnail" src={'http://localhost:8080/pic/'+obj.pho} alt="Profile image example" />
         <div class="fb-profile-text">
-            <h1><Link to={'/profi/'+obj._id}  >changer la photo de profil</Link></h1>
+            <h1><Link to={'/profi/'+obj._id} >changer la photo de profil</Link></h1>
         </div>
     </div>
     <div className='marg'>
@@ -55,7 +55,13 @@ export default class AffichePho extends Component {
     <h1><span>Prénom:</span>{obj.prenom}</h1>
     <h1 ><span>Nom de garage:</span>{obj.garage}</h1>
     <h1 ><span>Lieu:</span>{obj.lieu}</h1>
-    <h1 ><span>Contact:</span>{obj.contact}</h1>
+    <h1  onClick={()=>{
+        // console.log(obj.lieu);
+        localStorage.setItem('sary', obj.pho)
+        console.log(localStorage.getItem('sary'));
+        
+        
+    }}><span>Contact:</span>{obj.contact}</h1>
     <h1 >{obj.description}</h1>
     </div>
 </div>  

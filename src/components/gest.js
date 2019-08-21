@@ -1,7 +1,8 @@
 
 import React, { Component } from 'react';
 import axios from 'axios';
-
+import Index from './affichegest';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
 export default class Gest extends Component {
   constructor(props) {
     super(props);
@@ -60,6 +61,8 @@ export default class Gest extends Component {
  
   render() {
     return (
+      <div>
+     
         <div style={{ marginTop: 10 }}>
             <form onSubmit={this.onSubmit}>
                 <div className="form-group">
@@ -99,6 +102,10 @@ export default class Gest extends Component {
                     <input id='champ' type="submit" value="Ajouter" className="btn btn-primary"/>
                 </div>
             </form>
+        </div>
+        
+        <Index/>
+        
         </div>
     )
   }

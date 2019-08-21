@@ -34,7 +34,11 @@ export default class Home extends Component {
                             //(this.state.profil.length > 0) ? (this.state.profil.map((obj) => {
                                 (this.state.profil.length > 0) ? (this.state.profil.filter((params)=>params.visibilite).map((obj) => {
                                 return (
+                                    
 <div class="col-md-4 carde">
+<div>
+                                    <Link to={"/affichepho/"+localStorage.getItem('id')} id="titrebe">{obj.garage}</Link><span>  a posté</span>
+                                    </div>
 <div class="card">
 
 
@@ -47,8 +51,8 @@ export default class Home extends Component {
   <div className="container"><img width="90%" height="300px" src={'http://localhost:8080/user/'+obj.image} alt="pdp" /></div>
   <p class="card-text"><span>Description:</span> {obj.description}</p>
   <p class="card-text"><span>Prix:</span> {obj.prix}<span>$</span></p>
-  <Link className="btn btn-danger " id="metykosa" to={"/particulier/"+obj._id} onClick={()=>{
-      console.log(obj.id2);
+  <Link className="btn btn-danger " id="metykosa" to={"/rendre/"+obj._id} onClick={()=>{
+      console.log(obj._id);
       localStorage.setItem('ti',obj._id)
       
   }}>  S'inscrire </Link>
