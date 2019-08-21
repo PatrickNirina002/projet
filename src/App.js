@@ -24,7 +24,8 @@ import Photo from './components/photo';
 import AffPhoto from './components/affichePhoto';
 import AffichePho from './components/affichePho';
 import ModifPho from './components/modifPho';
-// import Gest from './components/gest';
+ import Gest from './components/gest';
+ import Affrendre from './components/afficherendre';
 import Index from './components/affichegest';
 // import Slider from './components/slider'
 //import Admin from './components/Admin';
@@ -54,7 +55,7 @@ class App extends Component {
                   <Route exact path="/login" component={ Login } />
                   <Route exact path="/atelier" component={ PostFrontToBack } />
                   
-                  <Route path="/particulier/:_id"  component={Inscrire} />
+                  <Route path="/rendre/:_id"  component={Inscrire} />
                   <Route path="/profil/:_id"  component={Modifier} />
                   <Route exact path="/register/:_id" component={ Chacun } />
                   <Route exact path="/bienvenue"  component={Vide} />
@@ -65,10 +66,11 @@ class App extends Component {
                   <Route exact path="/prof/:_id" component={ Prof } />
                   <Route exact path="/photo/:_id" component={ Photo } /> 
                   <Route exact path="/affichephoto/:_id" component={ AffPhoto } />
-                  <Route exact path="/affichepho/:_id" component={ AffichePho } />
+                  <PrivateRoute exact path="/affichepho/:_id" component={ AffichePho } />
                   <Route path="/profi/:_id"  component={ModifPho} />
                  
-                  <Route exact path="/affichegestion/:_id" component={ Index } />
+                  <Route  path="/gestion/:_id" component={ Gest } />
+                  <Route  path="/afficherendre/:_id" component={ Affrendre } />
                   {/* <Route path="/dash"  component={Admin} ></Route> */}
                 </div>
               

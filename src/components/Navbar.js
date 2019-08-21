@@ -10,6 +10,13 @@ import FooterPage from './footer';
 // import Chacun from './chacun';
 import { MDBNavbar, MDBNavbarNav, MDBNavItem, MDBNavLink, MDBNavbarToggler, MDBCollapse, MDBDropdown} from "mdbreact";
 class Navbar extends Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+        test:""
+    };
+  }
 
     onLogout(e) {
         e.preventDefault();
@@ -21,6 +28,10 @@ class Navbar extends Component {
       
       toggleCollapse = () => {
         this.setState({ isOpen: !this.state.isOpen });
+      }
+      componentDidMount(){
+        this.setState({test:localStorage.getItem('sary')})
+      console.log(localStorage.getItem('sary'));
       }
 
     render() {
@@ -105,7 +116,7 @@ class Navbar extends Component {
       </Link>
     </li>
     <li class="nav-item">
-    <Link class="nav-link sidesforth li" to="/">
+    <Link class="nav-link sidesforth li" to={"/afficherendre/"+localStorage.getItem('id')}>
       <span class="textside">Liste de rendez-vous</span>
     </Link>
     </li>
@@ -122,7 +133,7 @@ class Navbar extends Component {
     </li>
    
     <li class="nav-item">
-      <Link class="nav-link sidesfifth li" to={"/affichegestion/"+localStorage.getItem('id')}>
+      <Link class="nav-link sidesfifth li" to={"/gestion/"+localStorage.getItem('id')}>
         <span class="textside">Gestion</span>
       </Link>
     </li>
@@ -135,9 +146,12 @@ class Navbar extends Component {
   
   <ul class="navbar-nav2 ml-auto">
     <li class="dropdown">
-      <a href="#" class="dropdown-toggle" data-toggle="dropdown">Welcome WaLia</a>
+      <a href="#" class="dropdown-toggle" data-toggle="dropdown"><img className="roundedImage" src={'http://localhost:8080/pic/'+this.state.test} alt="Profile image example"/> </a>
         <ul class="dropdown-menu">
-            <li class="resflset li"><a href="profile.php"><i class="fa fa-fw fa-cog"></i> Edit profile</a></li>
+            <li class="resflset li"><a  onClick={()=>{
+              console.log(this.state.test);
+              
+            }}><i class="fa fa-fw fa-cog"></i> Edit profile</a></li>
             <li class="divider"></li>
             <li class="resflset li"><a href="#"  to='/login' onClick={this.onLogout.bind(this)} ><i     class="fa fa-fw fa-power-off"></i> Logout</a></li>
         </ul>
