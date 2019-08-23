@@ -9,6 +9,7 @@ export default class Home extends Component {
     constructor(props) {
         super(props);
         this.state = { profil: [] };
+        
 
     }
     componentDidMount() {
@@ -54,6 +55,7 @@ export default class Home extends Component {
   <Link className="btn btn-danger " id="metykosa" to={"/rendre/"+obj._id} onClick={()=>{
       console.log(obj._id);
       localStorage.setItem('ti',obj._id)
+      localStorage.setItem('titre',obj.titre)
       
   }}>  S'inscrire </Link>
 
