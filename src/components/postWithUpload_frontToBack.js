@@ -88,18 +88,7 @@ class PostFrontToBack extends React.Component {
           <input id='champ' ref={(ref) => { this.uploadInput = ref; }} type="file" name="image"/>
        
           <input type="submit" class="fadeIn fourth"   
-           onClick={() => {
-            confirmAlert({
-              customUI: () => {
-                return (
-                  <div className='custom-ui'>
-                    <h1>Cliquer ok pour que ton atelier sera ajouter </h1>
-                    <center></center><a href="/admin" id="okajout" className="btn btn-primary">OK</a>
-                  </div>
-                );
-              }
-            });
-          }} type="submit" id="ajouter_boutton"
+        type="submit" id="ajouter_boutton"
            
            value="Ajouter" className='bou'/>
       </form>

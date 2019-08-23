@@ -15,8 +15,13 @@ export default class Inscrire extends Component {
       nom: '',
       matricule: '',
       tel:'',
-      datej:''
+      datej:'',
+      titre:''
     }
+  }
+  componentDidMount(){
+    this.setState({titre:localStorage.getItem('titre')})
+  console.log(localStorage.getItem('titre'));
   }
   onChangenom(e) {
     this.setState({
@@ -60,42 +65,47 @@ export default class Inscrire extends Component {
  
   render() {
     return (
-        <div style={{ marginTop: 10 }}>
+        <div style={{ marginTop: 10 }} className="row">
             <form onSubmit={this.onSubmit}>
-                <div className="form-group">
-                    <label>Nom:  </label>
+               <div className="form-group col-md-2">
+                    <input type="submit"  
+                      className="btn btn-primary"
+                      value={this.state.titre}/>
+                </div>
+                <div className="form-group col-md-2">
                     <input  id='champ'
                       type="text" 
                       className="form-control" 
                       value={this.state.nom}
                       onChange={this.onChangenom}
+                      placeholder="Nom"
                       required/>
                 </div>
-                <div className="form-group">
-                    <label>matricule: </label>
+                <div className="form-group col-md-2">
                     <input type="text" id='champ'
                       className="form-control"
                       value={this.state.matricule}
                       onChange={this.onChangematricule}
+                      placeholder="Matricule"
                       required/>
                 </div>
-                <div className="form-group">
-                    <label>tel: </label>
+                <div className="form-group col-md-2">
                     <input type="tel"  id='champ'
                       className="form-control"
                       value={this.state.tel}
                       onChange={this.onChangetel}
+                      placeholder="Telephone"
                       required/>
                 </div>
-                <div className="form-group">
-                    <label>datej: </label>
+                <div className="form-group col-md-2">
                     <input type="text"  id='champ'
                       className="form-control"
                       value={this.state.datej}
                       onChange={this.onChangedatej}
+                      placeholder="Date de rendez-vous"
                       required/>
                 </div>
-                <div className="form-group">
+                <div className="form-group col-md-2">
                     <input id='champ' type="submit" value="S'incrire" className="btn btn-primary"/>
                 </div>
             </form>
