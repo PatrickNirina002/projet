@@ -64,7 +64,8 @@ export default class Inscrire extends Component {
   }
  
   render() {
-    return (
+    return (<div>
+      
         <div style={{ marginTop: 10 }} className="row">
             <form onSubmit={this.onSubmit}>
                <div className="form-group col-md-2">
@@ -109,6 +110,7 @@ export default class Inscrire extends Component {
                     <input id='champ' type="submit" value="S'incrire" className="btn btn-primary"/>
                 </div>
             </form>
+        </div>
         </div>
     )
   }
