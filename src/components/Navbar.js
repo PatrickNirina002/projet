@@ -6,9 +6,11 @@ import { logoutUser } from '../actions/authentication';
 import { withRouter } from 'react-router-dom';
 import Slider from './slider'
 import image from './logobe.png'
+import './navba.css'
 import FooterPage from './footer';
 // import Chacun from './chacun';
-import { MDBNavbar, MDBNavbarNav, MDBNavItem, MDBNavLink, MDBNavbarToggler, MDBCollapse, MDBDropdown} from "mdbreact";
+import { MDBNavbar, MDBNavbarBrand, MDBNavbarNav, MDBNavItem, MDBNavLink, MDBNavbarToggler, MDBCollapse, MDBDropdown,
+  MDBDropdownToggle, MDBDropdownMenu, MDBDropdownItem, MDBIcon } from "mdbreact";
 class Navbar extends Component {
   constructor(props) {
     super(props);
@@ -188,28 +190,39 @@ class Navbar extends Component {
    <MDBCollapse id="navbarCollapse3" isOpen={this.state.isOpen} navbar>
      <MDBNavbarNav left>
      <MDBNavItem>
-       <img width='80px' height='80px' src={image} />
-   <MDBNavLink to="/" id='daholo'>Accueil</MDBNavLink>
+  
+   <MDBNavLink to="/dd" id='daholo'>A propos</MDBNavLink>
  </MDBNavItem>
  
-       
+ <MDBNavItem>
+  
+ <MDBNavLink to="/" id='daholo'>Accueil</MDBNavLink>
+</MDBNavItem> 
        <MDBNavItem>
-         <MDBDropdown>
-           
-           
-         </MDBDropdown>
+      
        </MDBNavItem>
      </MDBNavbarNav>
      <MDBNavbarNav right>
        
-     <MDBNavLink className="waves-effect waves-light" to="/login" id='daholo'>
+ 
+            <MDBNavItem>
+            <MDBDropdown>
+            <MDBDropdownToggle nav caret>
+              <MDBIcon icon="user" />
+            </MDBDropdownToggle>
+            <MDBDropdownMenu className="dropdown-default">
+              <MDBDropdownItem>    <MDBNavLink  to="/login" id="coleur">
               Connecter
-            </MDBNavLink>
+            </MDBNavLink></MDBDropdownItem>
+             
+            </MDBDropdownMenu>
+          </MDBDropdown>
+            </MDBNavItem>
      </MDBNavbarNav>
    </MDBCollapse>
  </MDBNavbar>
  </div>
-  <div className="slider"><Slider/></div> 
+  
    
    </div>
 

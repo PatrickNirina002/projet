@@ -13,7 +13,7 @@ import Home from './components/Home';
 import Chacun from './components/chacun';
 import PostFrontToBack from './components/postWithUpload_frontToBack';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import Inscrire from './components/inscrire';
+// import Inscrire from './components/inscrire';
 import Modifier from './components/update';
 
 import Bienvenue from './components/bienvenue';
@@ -55,7 +55,7 @@ class App extends Component {
                   <Route exact path="/login" component={ Login } />
                   <Route exact path="/atelier" component={ PostFrontToBack } />
                   
-                  <Route path="/rendre/:_id"  component={Inscrire} />
+                 {/* <Route path="/rendre/:_id"  component={Inscrire} />*/}
                   <Route path="/profil/:_id"  component={Modifier} />
                   <Route exact path="/register/:_id" component={ Chacun } />
                   <Route exact path="/bienvenue"  component={Vide} />
@@ -66,7 +66,7 @@ class App extends Component {
                   <Route exact path="/prof/:_id" component={ Prof } />
                   <Route exact path="/photo/:_id" component={ Photo } /> 
                   <Route exact path="/affichephoto/:_id" component={ AffPhoto } />
-                  <PrivateRoute exact path="/affichepho/:_id" component={ AffichePho } />
+                  <Route exact path="/affichepho/:_id" component={ AffichePho } />
                   <Route path="/profi/:_id"  component={ModifPho} />
                  
                   <PrivateRoute  path="/gestion/:_id" component={ Gest } />
