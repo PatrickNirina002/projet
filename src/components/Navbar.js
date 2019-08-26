@@ -103,7 +103,7 @@ class Navbar extends Component {
 
 
 <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
- <button class="navbar-toggler navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+Â <button class="navbar-toggler navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
 
 <div class="collapse navbar-collapse" id="navbarResponsive">
   <ul class="navbar-nav navbar-sidenav">
@@ -141,7 +141,7 @@ class Navbar extends Component {
     </li>
     <li class="nav-item">
       <a class="nav-link sidesix li" href="service.php">
-        <span class="textside">  Services</span>
+        <span class="textside">Â  Services</span>
       </a>
     </li>
   </ul>
@@ -211,9 +211,9 @@ class Navbar extends Component {
               <MDBIcon icon="user" />
             </MDBDropdownToggle>
             <MDBDropdownMenu className="dropdown-default">
-              <MDBDropdownItem>    <MDBNavLink  to="/login" id="coleur">
+                 <MDBNavLink  to="/login" id="coleur">
               Connecter
-            </MDBNavLink></MDBDropdownItem>
+            </MDBNavLink>
              
             </MDBDropdownMenu>
           </MDBDropdown>
@@ -230,7 +230,7 @@ class Navbar extends Component {
         return(
             
                 
-                <div  id="navbarSupportedContent">
+                <div id="navbarSupportedContent"  >
                     {isAuthenticated ? authLinks : guestLinks}
                 </div>
            

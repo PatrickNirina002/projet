@@ -65,7 +65,7 @@ export default class Inscrire extends Component {
  
   render() {
     return (<div>
-      
+        <div className="blanc">RENDEZ-VOUS IMMÉDIAT</div>
         <div style={{ marginTop: 10 }} className="row">
             <form onSubmit={this.onSubmit}>
                <div className="form-group col-md-2">
