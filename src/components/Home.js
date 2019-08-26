@@ -7,7 +7,7 @@ import Inscrire from './inscrire';
 //import { MDBContainer, MDBRow, MDBCol } from "mdbreact";
 import { confirmAlert } from 'react-confirm-alert'; // Import
 import 'react-confirm-alert/src/react-confirm-alert.css'; // Import css
-import './home.css'
+import Slider from './slider';
 export default class Home extends Component {
 
     constructor(props) {
@@ -33,81 +33,135 @@ export default class Home extends Component {
 
     liste() {
         return <div>
-            <div class="row">
+        <div className="slid"><Slider/></div>
+
+        <div class="card card-cascade wider reverse">
+        
+     
+      
+        <div class="card-body card-body-cascade ">
+      
+      
+          <div class="card-text">
+          <div className="container cart">
+          <h1>DÉCOUVREZ LES PRESTATIONS AUTOMOBILES</h1>
+          <p class="card-text">Profitez d’une prestation de qualité effectuée par de véritables experts. Réalisez dès maintenant votre devis  et obtenez un RDV pour la réparation de votre véhicule.</p>
+          <div class="row">
                 
-                        {
-                            //(this.state.profil.length > 0) ? (this.state.profil.map((obj) => {
-                                (this.state.profil.length > 0) ? (this.state.profil.filter((params)=>params.visibilite).map((obj) => {
-                                return (
- 
-
-
-
-
-<div class="container">
-<div class="row "></div>
-<div class="row mb-5">
-    
-   
-    <div class="col-sm-6 col-md-4 col-lg-3 mt-4">
-        <div class="card card-inverse card-info">
-            <img class="card-img-top" src={'http://localhost:8080/user/'+obj.image} alt="pdp"/>
-            <div class="card-block">
-                <figure class="profile profile-inline">
-                    <img src={'http://localhost:8080/user/'+obj.image}  class="profile-avatar" alt=""/>
-                </figure>
-                <h4 class="card-title">{obj.titre}</h4>
-                <div class="card-text">
-                {obj.description}
-                </div>
-                <div class="card-text">
-                {obj.prix}
-                </div>
-            </div>
-            <div class="card-footer">
-                <small>Last updated 3 mins ago</small>
-              
-                <button class="btn btn-info float-right btn-sm" onClick={()=>{
-                    console.log(obj._id);
-                    localStorage.setItem('ti',obj._id)
-                    localStorage.setItem('titre',obj.titre)
-                    confirmAlert({
-                customUI: ({ onClose }) => {
+          {
+              //(this.state.profil.length > 0) ? (this.state.profil.map((obj) => {
+                  (this.state.profil.length > 0) ? (this.state.profil.filter((params)=>params.visibilite).map((obj) => {
                   return (
-                    <div className='custom-ui'>
-                    <div className="row">
-                    <div className="col-md-10"></div>
-                    <div className="col-md-2"><button onClick={onClose}>X</button></div>
-                    </div>
-                      <Inscrire/>
-                    </div>
-                  );
-                }
-              });
-              
-                }}>  S'inscrire </button>
-            </div>
-        </div>
-    </div>
-   
+                      
+<div class="col-md-4 carde">
+
+
+
+
+
+
+<div>
+                      <Link to={"/affichepho/"+localStorage.getItem('id')} id="titrebe">{obj.garage}</Link><span>  a posté</span>
+                      </div>
+<div class="card card-cascade narrower">
+
+
+<div class="view view-cascade overlay">
+<img  class="card-img-top sar"  src={'http://localhost:8080/user/'+obj.image} alt="pdp"/>
+<a>
+<div class="mask rgba-white-slight"></div>
+</a>
+</div>
+
+
+<div class="card-body card-body-cascade">
+
+
+<h5 class="pink-text pb-2 pt-1"><i class="fas fa-utensils"></i> {obj.titre}</h5>
+
+
+<p class="card-text">{obj.description}</p>
+<div className="row">
+<div className="col-md-3"></div>
+<div className="col-md-9"><button className="btn btn-danger long" id="metykosa" onClick={()=>{
+console.log(obj._id);
+localStorage.setItem('ti',obj._id)
+localStorage.setItem('titre',obj.titre)
+confirmAlert({
+customUI: ({ onClose }) => {
+return (
+<div className='custom-ui'>
+
+
+
+
+
+
+<div class="card card-cascade wider reverse">
+
+<div class="view view-cascade overlay">
+<div className="row">
+<div className="col-md-11"></div>
+<div className="col-md-1"><button onClick={onClose} className="ferme">X</button></div>
+</div>
+</div>
+
+<div class="card-body card-body-cascade ">
+
+
+<p class="card-text">
+<div className="pop"><Inscrire/></div>
+</p>
+
+
+</div>
+
 </div>
 </div>
 
 
+);
+}
+});
+
+}}> Prendre de rdv </button></div></div>
+<div className="row">
+<div className="col-md-3"></div>
+<div className="col-md-9"><Link className="btn btn-primary long" to="/affdescription">plus de detail</Link></div>
+</div>
+
+</div>
 
 
+<div class="rounded-bottom mdb-color lighten-3 text-center pt-3">
+<ul class="list-unstyled list-inline font-small">
+<li class="list-inline-item pr-2"><a href="#" class="white-text"><i class="far fa-comments pr-1"></i> {obj.rdv}</a></li>
+</ul>
+</div>
 
-
+</div>
+</div>
 
 
 )
 
 
 
-                            })) : ('')
-                        }
-                
+              })) : ('')
+          }
+  
+</div>
+
+          </div>
+          </div>
+      
+      
         </div>
+      
+      </div>
+
+
+
         </div>
     }
     render() {

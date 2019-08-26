@@ -69,7 +69,7 @@ class App extends Component {
                   <Route exact path="/affichepho/:_id" component={ AffichePho } />
                   <Route path="/profi/:_id"  component={ModifPho} />
                  
-                  <PrivateRoute  path="/gestion/:_id" component={ Gest } />
+                  <Route  path="/gestion/:_id" component={ Gest } />
                   <PrivateRoute  path="/afficherendre/:_id" component={ Affrendre } />
                   {/* <Route path="/dash"  component={Admin} ></Route> */}
                 </div>

@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 //import './Home.css';
-import volo from './bureau.jpeg';
-import de from './ato3.jpeg';
+import volo from './bureau.jpg';
+import de from './ato3.jpg';
 // import telo from './bureau.jpeg'
 import { Animation, MDBCarousel, MDBCarouselCaption, MDBCarouselInner, MDBCarouselItem, MDBView, MDBMask } from
 "mdbreact";
@@ -13,7 +13,7 @@ class Slider extends Component {
         <MDBCarouselInner>
           <MDBCarouselItem itemId="1">
             <MDBView>
-              <img className="d-block w-100 image" height='350px' src={volo} alt="First slide" />
+              <img className="d-block w-100 image" height='600px' src={volo} alt="First slide" />
               <MDBMask overlay="black-slight" />
             </MDBView>
             <MDBCarouselCaption>
@@ -26,7 +26,7 @@ class Slider extends Component {
           <MDBCarouselItem itemId="2">
             <MDBView>
             
-              <img className="d-block w-100 image" height='350px' src={de} alt="Second slide" />
+              <img className="d-block w-100 image" height='600px' src={de} alt="Second slide" />
               <MDBMask overlay="black-slight" />
             </MDBView>
             <MDBCarouselCaption>
@@ -39,7 +39,7 @@ matières premières. "</h3>
           </MDBCarouselItem>
           <MDBCarouselItem itemId="3">
             <MDBView>
-              <img className="d-block w-100 image" src={de} height='350px'  width="700px" alt="Third slide" />
+              <img className="d-block w-100 image" src={de} height='600px'  width="700px" alt="Third slide" />
               <MDBMask overlay="black-slight" />
             </MDBView>
             <MDBCarouselCaption>
@@ -52,7 +52,7 @@ cuisiner afin de manger correctement."</h3>
           </MDBCarouselItem>
           <MDBCarouselItem itemId="4">
             <MDBView>
-              <img className="d-block w-100 image" height='350px' src={de} alt="Burnedforest" />
+              <img className="d-block w-100 image" height='600px' src={de} alt="Burnedforest" />
               <MDBMask overlay="black-slight" />
             </MDBView>
             <MDBCarouselCaption>
