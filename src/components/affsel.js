@@ -7,8 +7,7 @@ import Inscrire from './inscrire';
 //import { MDBContainer, MDBRow, MDBCol } from "mdbreact";
 import { confirmAlert } from 'react-confirm-alert'; // Import
 import 'react-confirm-alert/src/react-confirm-alert.css'; // Import css
-import Slider from './slider';
-export default class Home extends Component {
+export default class Seul extends Component {
 
     constructor(props) {
         super(props);
@@ -17,7 +16,7 @@ export default class Home extends Component {
 
     }
     componentDidMount() {
-        axios.get('http://localhost:8080/affichertous')
+        axios.get('http://localhost:8080/selrep/'+localStorage.getItem('ti'))
             .then(response => {
                 console.log(response.data);
                 this.setState({ profil: response.data });
@@ -33,27 +32,25 @@ export default class Home extends Component {
 
     liste() {
         return <div>
-        <div className="slid"><Slider/></div>
 
-        <div class="card card-cascade wider reverse">
+        <div >
         
      
       
-        <div class="card-body card-body-cascade ">
+        <div >
       
       
           <div class="card-text">
           <div className="container cart">
-          <h1>DÉCOUVREZ LES PRESTATIONS AUTOMOBILES</h1>
-          <p class="card-text">Profitez d’une prestation de qualité effectuée par de véritables experts. Réalisez dès maintenant votre devis  et obtenez un RDV pour la réparation de votre véhicule.</p>
+    
           <div class="row">
                 
           {
-              //(this.state.profil.length > 0) ? (this.state.profil.map((obj) => {
-                  (this.state.profil.length > 0) ? (this.state.profil.filter((params)=>params.visibilite).map((obj) => {
+              (this.state.profil.length > 0) ? (this.state.profil.map((obj) => {
+                //   (this.state.profil.length > 0) ? (this.state.profil.filter((params)=>params.visibilite).map((obj) => {
                   return (
                       
-<div class="col-md-4 carde">
+<div class="col-md-12 carde">
 
 
 
@@ -61,10 +58,7 @@ export default class Home extends Component {
 
 
 <div>
-                      <Link to={"/profilclient/"+obj.id2} id="titrebe" onClick={()=>{
-                          localStorage.setItem('idregister',obj.id2)
-                          console.log(obj.id2);
-                      }}>{obj.garage}</Link><span>  a posté</span>
+                      <Link to={"/affichepho/"+localStorage.getItem('id')} id="titrebe">{obj.garage}</Link><span>  a posté</span>
                       </div>
 <div class="card card-cascade narrower">
 
@@ -128,13 +122,7 @@ return (
 });
 
 }}> Prendre de rdv </button></div></div>
-<div className="row">
-<div className="col-md-3"></div>
-<div className="col-md-9"><Link className="btn btn-primary long" to={"/affdescription/"+obj._id} onClick={()=>{
-    console.log(obj._id);
-    
-}}>plus de detail</Link></div>
-</div>
+
 
 </div>
 

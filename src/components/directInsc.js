@@ -2,7 +2,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 
-export default class Inscrire extends Component {
+export default class Direct extends Component {
   constructor(props) {
     super(props);
     this.onChangenom = this.onChangenom.bind(this);
@@ -68,12 +68,7 @@ export default class Inscrire extends Component {
         <div className="blanc">RENDEZ-VOUS IMMÉDIAT</div>
         <div style={{ marginTop: 10 }} className="row">
             <form onSubmit={this.onSubmit}>
-               <div className="form-group col-md-2">
-                    <input type="submit"  
-                      className="btn btn-primary"
-                      value={this.state.titre}/>
-                </div>
-                <div className="form-group col-md-2">
+                <div className="form-group col-md-3">
                     <input  id='champ'
                       type="text" 
                       className="form-control" 
