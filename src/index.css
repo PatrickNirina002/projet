@@ -221,7 +221,7 @@ border-radius: 10px !important;
   margin-top:200px;
 }
 .li{
-  font-size: 15px;
+  font-size: 12px;
   font-weight: bold;
 }
 .roundedImage{
@@ -261,4 +261,17 @@ border-radius: 10px !important;
 }
 .long{
   width: 180px !important;
+}
+.faire{
+  width: 200px;
+  height: 200px;;
+}
+.haut{
+  margin-top: -90px;
+}
+.couverture{
+  height: 20%;;
+}
+.pour{
+  width: 99%;
 }
