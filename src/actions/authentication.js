@@ -19,9 +19,11 @@ export const loginUser = (user) => dispatch => {
     axios.post('http://localhost:8080/login', user)
             .then(res => {
                 const { token } = res.data;
+                console.log(token);
+                
                 localStorage.setItem('jwtToken', token);
                 localStorage.setItem('id', res.data.id);
-                 console.log(res.data);
+                //  console.log(res.data);
                  localStorage.setItem('anarana',res.data.name)
                  
                  

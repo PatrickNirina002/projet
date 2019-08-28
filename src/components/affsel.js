@@ -7,7 +7,8 @@ import Inscrire from './inscrire';
 //import { MDBContainer, MDBRow, MDBCol } from "mdbreact";
 import { confirmAlert } from 'react-confirm-alert'; // Import
 import 'react-confirm-alert/src/react-confirm-alert.css'; // Import css
-export default class Seul extends Component {
+import { connect } from 'react-redux';
+class Seul extends Component {
 
     constructor(props) {
         super(props);
@@ -16,7 +17,7 @@ export default class Seul extends Component {
 
     }
     componentDidMount() {
-        axios.get('http://localhost:8080/selrep/'+localStorage.getItem('ti'))
+        axios.get('http://localhost:8080/selrep/'+this.props.match.params._id)
             .then(response => {
                 console.log(response.data);
                 this.setState({ profil: response.data });
@@ -25,7 +26,14 @@ export default class Seul extends Component {
             .catch(function (error) {
                 console.log(error);
             })
-
+       
+                if(this.props.auth.isAuthenticated==false) {
+                    
+                }
+                else{
+                    this.props.history.push('/admin');
+                }
+            
         
 
     }
@@ -57,9 +65,6 @@ export default class Seul extends Component {
 
 
 
-<div>
-                      <Link to={"/affichepho/"+localStorage.getItem('id')} id="titrebe">{obj.garage}</Link><span>  a posté</span>
-                      </div>
 <div class="card card-cascade narrower">
 
 
@@ -166,3 +171,9 @@ return (
         );
     }
 }
+const mapStateToProps = (state) => ({
+    auth: state.auth,
+    errors: state.errors
+  })
+  
+  export  default connect(mapStateToProps)(Seul)

@@ -3,7 +3,8 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import Index from './affichegest';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
-export default class Gest extends Component {
+import { connect } from 'react-redux';
+ class Gest extends Component {
   constructor(props) {
     super(props);
     this.onChangematricule = this.onChangematricule.bind(this);
@@ -19,6 +20,17 @@ export default class Gest extends Component {
       prix:''
     }
   }
+
+  componentDidMount() {
+    if(this.props.auth.isAuthenticated==false) {
+        this.props.history.push('/login');
+    }
+    else{
+      
+    }
+}
+
+
   onChangematricule(e) {
     this.setState({
       matricule: e.target.value
@@ -110,3 +122,9 @@ export default class Gest extends Component {
     )
   }
 }
+const mapStateToProps = (state) => ({
+  auth: state.auth,
+  errors: state.errors
+})
+
+export  default connect(mapStateToProps)(Gest)

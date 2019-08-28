@@ -3,7 +3,8 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import TableRow from './TableRow';
 import Gest from './gest';
-export default class Affrendre extends Component {
+import {connect} from 'react-redux'
+class Affrendre extends Component {
 
   constructor(props) {
       super(props);
@@ -19,6 +20,12 @@ export default class Affrendre extends Component {
         .catch(function (error) {
           console.log(error);
         })
+        if(this.props.auth.isAuthenticated==false) {
+            this.props.history.push('/login');
+        }
+        else{
+          
+        }
     }
 
 
@@ -79,3 +86,9 @@ export default class Affrendre extends Component {
       );
   }
   }
+  const mapStateToProps = (state) => ({
+    auth: state.auth,
+    errors: state.errors
+  })
+  
+  export  default connect(mapStateToProps)(Affrendre)

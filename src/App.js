@@ -16,7 +16,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 // import Inscrire from './components/inscrire';
 import Modifier from './components/update';
 
-import Bienvenue from './components/bienvenue';
+
 import Vide from './components/bienvenue';
 import PrivateRoute from './components/cahe';
 import Prof from './components/profi';
@@ -28,7 +28,8 @@ import ModifPho from './components/modifPho';
  import Affrendre from './components/afficherendre';
  import Affdesc from './components/affdescription';
  import Profilpourclient from './components/profilClient';
-import Index from './components/affichegest';
+  import DescriptionAdmin from './components/descrptionAdmin';
+import Seul from './components/affsel';
 // import Slider from './components/slider'
 //import Admin from './components/Admin';
 if(localStorage.jwtToken) {
@@ -60,7 +61,6 @@ class App extends Component {
                  {/* <Route path="/rendre/:_id"  component={Inscrire} />*/}
                   <Route path="/profil/:_id"  component={Modifier} />
                   <Route exact path="/register/:_id" component={ Chacun } />
-                  <Route exact path="/bienvenue"  component={Vide} />
                   <switch>
                     <PrivateRoute exact path="/admin"  component={Vide} />
                     
@@ -72,9 +72,10 @@ class App extends Component {
                   <Route path="/profi/:_id"  component={ModifPho} />
                  
                   <Route  path="/gestion/:_id" component={ Gest } />
-                  <PrivateRoute  path="/afficherendre/:_id" component={ Affrendre } />
+                  <Route  path="/afficherendre/:_id" component={ Affrendre } />
                   <Route  path="/affdescription/:_id" component={ Affdesc } />
                   <Route exact path="/profilclient/:_id" component={ Profilpourclient } />
+                  <Route exact path="/descriptionAd/:_id" component={ DescriptionAdmin } />
                   {/* <Route path="/dash"  component={Admin} ></Route> */}
                 </div>
               

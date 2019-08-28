@@ -2,7 +2,7 @@
 import React from 'react';
 import { confirmAlert } from 'react-confirm-alert'; // Import
 import 'react-confirm-alert/src/react-confirm-alert.css';
-
+import { connect } from 'react-redux';
 class PostFrontToBack extends React.Component {
   constructor(props) {
     super(props);
@@ -18,7 +18,14 @@ class PostFrontToBack extends React.Component {
     this.handleUploadImage = this.handleUploadImage.bind(this);
   }
 
-
+  componentDidMount() {
+    if(this.props.auth.isAuthenticated==false) {
+        this.props.history.push('/login');
+    }
+    else{
+      
+    }
+}
 
 
   onChange(event) {
@@ -96,4 +103,9 @@ class PostFrontToBack extends React.Component {
   }
 }
 
-export default PostFrontToBack;
+const mapStateToProps = (state) => ({
+  auth: state.auth,
+  errors: state.errors
+})
+
+export  default connect(mapStateToProps)(PostFrontToBack)

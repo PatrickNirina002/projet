@@ -4,7 +4,8 @@ import axios from 'axios';
 //import ReactImageMagnify from 'react-image-magnify';
 import { Link } from 'react-router-dom';
 import   './affichePho.css';
-export default class AffichePho extends Component {
+import {connect} from 'react-redux'
+class AffichePho extends Component {
 
     constructor(props) {
         super(props);
@@ -26,14 +27,19 @@ export default class AffichePho extends Component {
             .catch(function (error) {
                 console.log(error);
             })
-
+            if(this.props.auth.isAuthenticated==false) {
+                this.props.history.push('/login');
+            }
+            else{
+              
+            }
         
 
     }
 
     liste() {
         return <div>
-            <div class="row">
+            <div class="row" >
                 
                         {
                             (this.state.profil.length > 0) ? (this.state.profil.map((obj) => {
@@ -43,7 +49,9 @@ export default class AffichePho extends Component {
 
 
 
-<div class="container main-secction">
+<div onClick={()=>{console.log(obj.name)
+    localStorage.setItem('sarybe',obj.name);
+}} class="container main-secction">
 <div class="row">
     <div class="col-md-12 col-sm-12 col-xs-12 image-section">
         <img src="https://png.pngtree.com/thumb_back/fw800/back_pic/00/08/57/41562ad4a92b16a.jpg"/>
@@ -228,3 +236,9 @@ export default class AffichePho extends Component {
         );
     }
 }
+const mapStateToProps = (state) => ({
+    auth: state.auth,
+    errors: state.errors
+  })
+  
+  export  default connect(mapStateToProps)(AffichePho)

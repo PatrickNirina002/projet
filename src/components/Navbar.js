@@ -111,7 +111,11 @@ class Navbar extends Component {
       <a class="nav-link navlogo text-center" href="index.php">
         <img src="https://vignette.wikia.nocookie.net/nationstates/images/2/29/WS_Logo.png/revision/latest?cb=20080507063620"/>
       </a>
-
+      <li class="nav-item">
+      <Link class="nav-link sidefrst li" to={"/prof/"+localStorage.getItem('id')}>
+        <span class="textside">Ajouter de Profil</span>
+      </Link>
+    </li>
     <li class="nav-item">
       <Link class="nav-link sidefrst li" to={"/affichepho/"+localStorage.getItem('id')}>
         <span class="textside">Profil</span>
