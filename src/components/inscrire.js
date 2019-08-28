@@ -22,6 +22,7 @@ export default class Inscrire extends Component {
   componentDidMount(){
     this.setState({titre:localStorage.getItem('titre')})
   console.log(localStorage.getItem('titre'));
+    
   }
   onChangenom(e) {
     this.setState({

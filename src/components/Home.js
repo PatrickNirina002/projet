@@ -8,7 +8,8 @@ import Inscrire from './inscrire';
 import { confirmAlert } from 'react-confirm-alert'; // Import
 import 'react-confirm-alert/src/react-confirm-alert.css'; // Import css
 import Slider from './slider';
-export default class Home extends Component {
+import {connect} from 'react-redux'
+class Home extends Component {
 
     constructor(props) {
         super(props);
@@ -30,7 +31,12 @@ export default class Home extends Component {
 
             this.setState({test:localStorage.getItem('sarybe')})
             console.log(localStorage.getItem('sarybe'));
-
+            if(this.props.auth.isAuthenticated==false) {
+                
+            }
+            else{
+                this.props.history.push('/admin');
+            }
     }
 
     liste() {
@@ -181,3 +187,9 @@ return (
         );
     }
 }
+const mapStateToProps = (state) => ({
+    auth: state.auth,
+    errors: state.errors
+  })
+  
+  export  default connect(mapStateToProps)(Home)

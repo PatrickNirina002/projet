@@ -1,8 +1,8 @@
 
 import React, { Component } from 'react';
 import axios from 'axios';
-
-export default class Direct extends Component {
+import {connect} from 'react-redux'
+class Direct extends Component {
   constructor(props) {
     super(props);
     this.onChangenom = this.onChangenom.bind(this);
@@ -22,6 +22,12 @@ export default class Direct extends Component {
   componentDidMount(){
     this.setState({titre:localStorage.getItem('titre')})
   console.log(localStorage.getItem('titre'));
+  if(this.props.auth.isAuthenticated==false) {
+    
+}
+else{
+  this.props.history.push('/admin');
+}
   }
   onChangenom(e) {
     this.setState({
@@ -110,3 +116,9 @@ export default class Direct extends Component {
     )
   }
 }
+const mapStateToProps = (state) => ({
+  auth: state.auth,
+  errors: state.errors
+})
+
+export  default connect(mapStateToProps)(Direct)
