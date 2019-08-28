@@ -7,8 +7,8 @@ import Inscrire from './inscrire';
 //import { MDBContainer, MDBRow, MDBCol } from "mdbreact";
 import { confirmAlert } from 'react-confirm-alert'; // Import
 import 'react-confirm-alert/src/react-confirm-alert.css'; // Import css
-import { connect } from 'react-redux';
- class ImageAdmin extends Component {
+
+ export default class ImageAdmin extends Component {
 
     constructor(props) {
         super(props);
@@ -27,12 +27,7 @@ import { connect } from 'react-redux';
                 console.log(error);
             })
             
-                if(this.props.auth.isAuthenticated==false) {
-                    this.props.history.push('/login');
-                }
-                else{
-                  
-                }
+             
             
         
 
@@ -129,9 +124,3 @@ import { connect } from 'react-redux';
     }
 }
 
-const mapStateToProps = (state) => ({
-    auth: state.auth,
-    errors: state.errors
-  })
-  
-  export  default connect(mapStateToProps)(ImageAdmin)

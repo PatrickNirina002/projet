@@ -4,7 +4,8 @@ import axios from 'axios';
 //import ReactImageMagnify from 'react-image-magnify';
 import { Link } from 'react-router-dom';
 import   './affichePho.css';
-export default class Profiles extends Component {
+import {connect} from 'react-redux'
+class Profiles extends Component {
 
     constructor(props) {
         super(props);
@@ -27,7 +28,12 @@ export default class Profiles extends Component {
                 console.log(error);
             })
 
-        
+            if(this.props.auth.isAuthenticated==false) {
+                this.props.history.push('/login');
+            }
+            else{
+              
+            }
 
     }
 
@@ -228,3 +234,9 @@ export default class Profiles extends Component {
         );
     }
 }
+const mapStateToProps = (state) => ({
+    auth: state.auth,
+    errors: state.errors
+  })
+  
+  export  default connect(mapStateToProps)(Profiles)

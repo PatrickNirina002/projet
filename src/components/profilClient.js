@@ -6,7 +6,8 @@ import { Link } from 'react-router-dom';
 import   './Pho.css';
 import Inscrire from './inscrire';
 import Direct from './directInsc';
-export default class Profilpourclient extends Component {
+import {connect} from 'react-redux'
+class Profilpourclient extends Component {
 
     constructor(props) {
         super(props);
@@ -28,7 +29,12 @@ export default class Profilpourclient extends Component {
             .catch(function (error) {
                 console.log(error);
             })
-
+            if(this.props.auth.isAuthenticated==false) {
+                
+            }
+            else{
+                this.props.history.push('/admin');
+            }
         
 
     }
@@ -131,3 +137,9 @@ export default class Profilpourclient extends Component {
         );
     }
 }
+const mapStateToProps = (state) => ({
+    auth: state.auth,
+    errors: state.errors
+  })
+  
+  export  default connect(mapStateToProps)(Profilpourclient)

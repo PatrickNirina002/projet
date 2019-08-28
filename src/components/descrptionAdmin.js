@@ -67,11 +67,11 @@ import { connect } from 'react-redux';
 
 
 <div className="row">
-<div className="col-md-9"><h5 class="pink-text pb-2 pt-1"><i ></i> {obj.titre}</h5></div>
-<div className="col-md-3"><div class="dropdown">
+<div className="col-md-10"><h5 class="pink-text pb-2 pt-1"><i ></i> {obj.titre}</h5></div>
+<div className="col-md-2"><div class="dropdown">
   <h3 class="dropbtn">...</h3>
   <div class="dropdown-content">
-  <div className="col-md-6"><h5   onClick={()=>{
+  <div className="col-md-6"><h5  className="h"  onClick={()=>{
     console.log(obj._id);
     localStorage.setItem('idDesc',obj._id)
     localStorage.setItem('titre',obj.titre)
