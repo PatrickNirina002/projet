@@ -12,7 +12,8 @@ export default class Home extends Component {
 
     constructor(props) {
         super(props);
-        this.state = { profil: [] };
+        this.state = { profil: [] ,test:""};
+     
         
 
     }
@@ -27,7 +28,8 @@ export default class Home extends Component {
                 console.log(error);
             })
 
-        
+            this.setState({test:localStorage.getItem('sarybe')})
+            console.log(localStorage.getItem('sarybe'));
 
     }
 
@@ -61,6 +63,7 @@ export default class Home extends Component {
 
 
 <div>
+
                       <Link to={"/profilclient/"+obj.id2} id="titrebe" onClick={()=>{
                           localStorage.setItem('idregister',obj.id2)
                           console.log(obj.id2);
@@ -83,7 +86,7 @@ export default class Home extends Component {
 <h5 class="pink-text pb-2 pt-1"><i class="fas fa-utensils"></i> {obj.titre}</h5>
 
 
-<p class="card-text">{obj.description}</p>
+<p class="card-text para">{obj.description.length>120?obj.description.slice(0,110)+'...':obj.description}</p>
 <div className="row">
 <div className="col-md-3"></div>
 <div className="col-md-9"><button className="btn btn-danger long" id="metykosa" onClick={()=>{

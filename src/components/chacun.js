@@ -7,7 +7,8 @@ import { confirmAlert } from 'react-confirm-alert'; // Import
 import 'react-confirm-alert/src/react-confirm-alert.css'; // Import css
 import Modifier from './update';
 import Descri from './descri';
-export default class Chacun extends Component {
+import {connect} from 'react-redux'
+class Chacun extends Component {
 
     constructor(props) {
         super(props);
@@ -29,7 +30,14 @@ export default class Chacun extends Component {
             .catch(function (error) {
                 console.log(error);
             })
-
+         
+                if(this.props.auth.isAuthenticated==false) {
+                    this.props.history.push('/login');
+                }
+                else{
+                  
+                }
+            
         
 
     }
@@ -80,10 +88,10 @@ liste() {
 }}><i class="fas fa-utensils"></i> {obj.titre}</h5>
 
 
-<p class="card-text">{obj.description}</p>
+<p class="card-text">{obj.description.length>120?obj.description.slice(0,90)+'...':obj.description}</p>
 <div className="row">
 
-<div>
+
 <div className='col-md-6'>
 
 {obj.visibilite===true ?(<button onClick={(e)=>{
@@ -108,7 +116,7 @@ axios.get('http://localhost:8080/register/'+ localStorage.getItem('id')).then(re
       
    }} className="btn btn-success">Activer</button>)}
 </div>
-       </div>
+   
 <div className="col-md-6"><button className="btn btn-danger" id="metykosa" onClick={()=>{
 console.log(obj._id);
 localStorage.setItem('ti',obj._id)
@@ -161,7 +169,7 @@ return (
 
 }}> Modifier </button></div></div>
 <div className='row'>
-<div className='col-md-6'>
+<div className='col-md-6'><Link to={"/descriptionAd/"+obj._id} className="btn btn-primary">Detail</Link>
 </div>
 <div className="col-md-6"><button className="btn btn-danger" id="metykosa" onClick={()=>{
     console.log(obj._id);
@@ -183,10 +191,7 @@ return (
     <div className="col-md-3"><button onClick={onClose} className="ferme">X</button></div>
     </div>
     <div class="view view-cascade overlay">
-    <div className="row">
-    <div className="col-md-11"></div>
-    <div className="col-md-1"><button onClick={onClose} className="ferme">X</button></div>
-    </div>
+    
     </div>
     
     <div class="card-body card-body-cascade ">
@@ -260,3 +265,9 @@ render() {
     );
 }
 }
+const mapStateToProps = (state) => ({
+    auth: state.auth,
+    errors: state.errors
+  })
+  
+  export  default connect(mapStateToProps)(Chacun)

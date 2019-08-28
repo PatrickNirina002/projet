@@ -1,4 +1,4 @@
-
+import { BrowserRouter as Router, Route } from 'react-router-dom';
 import React, { Component } from 'react';
 import axios from 'axios';
 //import ReactImageMagnify from 'react-image-magnify';
@@ -9,7 +9,8 @@ import Inscrire from './inscrire';
 // import 'react-confirm-alert/src/react-confirm-alert.css'; // Import css
 import Slider from './slider';
 import Seul from './affsel';
-export default class Affdesc extends Component {
+import { connect } from 'react-redux';
+class Affdesc extends Component {
 
     constructor(props) {
         super(props);
@@ -27,7 +28,14 @@ export default class Affdesc extends Component {
             .catch(function (error) {
                 console.log(error);
             })
-
+        
+                if(this.props.auth.isAuthenticated==false) {
+                    
+                }
+                else{
+                    this.props.history.push('/admin');
+                }
+            
         
 
     }
@@ -88,7 +96,7 @@ export default class Affdesc extends Component {
 
           </div>
           <div className="col-md-4">
-          <Seul/>
+          <Route exact path="/affdescription/:_id" component={ Seul } />
           </div>
         </div>
     }
@@ -100,3 +108,9 @@ export default class Affdesc extends Component {
         );
     }
 }
+const mapStateToProps = (state) => ({
+    auth: state.auth,
+    errors: state.errors
+  })
+  
+  export  default connect(mapStateToProps)(Affdesc)
