@@ -141,9 +141,9 @@ class Navbar extends Component {
       </Link>
     </li>
     <li class="nav-item">
-      <a class="nav-link sidesix li" href="service.php">
-        <span class="textside">Â  Services</span>
-      </a>
+      <Link to="/admin" class="nav-link sidesix li" href="service.php">
+        <span class="textside">A propos de cette site</span>
+      </Link>
     </li>
   </ul>
   
