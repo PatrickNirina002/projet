@@ -68,7 +68,7 @@ class PostFrontToBack extends React.Component {
 
   render() {
     return (
-      <form onSubmit={this.handleUploadImage } className="poste"
+      <form onSubmit={this.handleUploadImage } className="poste admin"
        
     ><div className="form-group ">
         <label>titre:</label>

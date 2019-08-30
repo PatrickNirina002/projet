@@ -1,6 +1,9 @@
 
 import React, { Component } from 'react';
 import axios from 'axios';
+import UpdGestion from './updGestion';
+import { confirmAlert } from 'react-confirm-alert'; // Import
+import 'react-confirm-alert/src/react-confirm-alert.css'; // Import css
 import TableRow from './TableRow';
 import Gest from './gest';
 export default class Index extends Component {
@@ -36,16 +39,53 @@ export default class Index extends Component {
                           <th className="li">Nom de propriétaire</th>
                           <th className="li">Type de réparation</th>
                           <th className="li">Prix</th>
+                          <th className="li">Action</th>
                       </tr>
                   </thead>
                   <tbody>
                       {
                           (this.state.business.length > 0) ? (this.state.business.map((obj) => {
                               return <tr key={obj._id}>
-                                  <td className="li">{obj.matricule}</td>
+                                  <td className="li" onClick={()=>{
+                                    console.log(obj._id);
+                                    
+                                    localStorage.setItem('idGest',obj._id)
+                                  }}>{obj.matricule}</td>
                                   <td className="li">{obj.nom_pro}</td>
                                   <td className="li">{obj.type_rep}</td>
                                   <td className="li">{obj.prix}</td>
+                                  <td className="li"><button onClick={()=>{
+                                    confirmAlert({
+                                      customUI: ({ onClose }) => {
+                                      return (
+                                      <div className='custom-ui'>
+                                            
+                                          <div class="card card-cascade wider reverse">
+                                          <div className="row">
+                                          <div className="col-md-9"></div>
+                                          <div className="col-md-3"><button onClick={onClose} className="ferme">X</button></div>
+                                          </div>
+                                          <div class="view view-cascade overlay">       
+                                          </div>       
+                                          <div class="card-body card-body-cascade "> 
+                                          <p class="card-text">
+                                          <UpdGestion/>      
+                                          </p>    
+                                          </div>
+                                          
+                                          </div>
+                                         
+                                      </div>
+                                      
+                                      
+                                      );
+                                      
+                                  }})
+                                }}>Modifier</button>
+                                  <button onClick={()=>{
+
+                                  }}>supprimer</button>
+                                  </td>
                                   {console.log(obj)}
                               </tr>
 

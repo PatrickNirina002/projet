@@ -15,10 +15,19 @@ class Home extends Component {
 
     constructor(props) {
         super(props);
-        this.state = { profil: [] ,test:""};
+        this.state = { profil: [] ,test:"",recherche:""};
      
-        
+        this.onChange = this.onChange.bind(this)  
 
+    }
+
+    onChange(event) {
+        this.setState({
+            [event.target.name]: event.target.value
+            
+            
+        })
+        console.log(this.state.recherche);
     }
     componentDidMount() {
         axios.get('https://finaly-s.herokuapp.com/affichertous')
@@ -54,13 +63,21 @@ class Home extends Component {
       
           <div class="card-text">
           <div className="container cart">
-          <h1>DÉCOUVREZ LES PRESTATIONS AUTOMOBILES</h1>
-          <p class="card-text">Profitez d’une prestation de qualité effectuée par de véritables experts. Réalisez dès maintenant votre devis  et obtenez un RDV pour la réparation de votre véhicule.</p>
+          <div id="back">
+          <h1 className="cole">DÉCOUVREZ LES PRESTATIONS AUTOMOBILES</h1>
+          <p class="card-text cole">Profitez d’une prestation de qualité effectuée par de véritables experts. Réalisez dès maintenant votre devis  et obtenez un RDV pour la réparation de votre véhicule.</p>
+          <div className="row">
+          <div className="col-md-6"></div>
+          <div className="col-md-6 form-group">
+          <input type="text" name="recherche"  class="form-control we" value={this.state.recherche} onChange={this.onChange} placeholder="Entrer le titre pour le rechercher"/></div>
+          </div>
+          </div>
+          <div className="v"></div>
           <div class="row">
                 
           {
               //(this.state.profil.length > 0) ? (this.state.profil.map((obj) => {
-                  (this.state.profil.length > 0) ? (this.state.profil.filter((params)=>params.visibilite).map((obj) => {
+                  (this.state.profil.length > 0) ? (this.state.profil.filter((params)=>params.visibilite).filter((params)=>params.titre.indexOf(this.state.recherche) !==-1).map((obj) => {
                   return (
                       
 <div class="col-md-4 carde">

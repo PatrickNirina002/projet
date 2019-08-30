@@ -64,14 +64,12 @@ import { connect } from 'react-redux';
 
 
 
-
-
 <div className="row">
 <div className="col-md-10"><h5 class="pink-text pb-2 pt-1"><i ></i> {obj.titre}</h5></div>
 <div className="col-md-2"><div class="dropdown">
   <h3 class="dropbtn">...</h3>
   <div class="dropdown-content">
-  <div className="col-md-6"><h5  className="h"  onClick={()=>{
+  <div className="col-md-6"><a  className="h"  onClick={()=>{
     console.log(obj._id);
     localStorage.setItem('idDesc',obj._id)
     localStorage.setItem('titre',obj.titre)
@@ -102,7 +100,42 @@ import { connect } from 'react-redux';
     }
     });
     
-    }}> Modifier</h5></div>
+    }}> Modifier</a>
+    <a onClick={()=>{
+        confirmAlert({
+            customUI: ({ onClose }) => {
+            return (
+            <div className='custom-ui'>
+                  
+                <div class="card card-cascade wider reverse">
+                <div className="row">
+                <div className="col-md-8"></div>
+                <div className="col-md-4"><button onClick={onClose} className="ferme">X</button></div>
+                </div>
+                <div class="view view-cascade overlay">       
+                </div>       
+                <div class="card-body card-body-cascade "> 
+                <p className="li">cliquez ok pour supprimer</p>
+                <p class="card-text">
+                <button onClick={()=>{
+                    axios.delete('https://finaly-s.herokuapp.com/delete/'+obj._id)
+                }} className="btn btn-danger">Ok</button>    
+                </p>    
+                </div>
+                
+                </div>
+               
+            </div>
+            
+            
+            );
+            }
+            });
+
+        
+    }}
+    >supprimer</a>
+    </div>
   </div>
 </div></div></div>
 <p class="card-text">{obj.description}</p>
