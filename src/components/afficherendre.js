@@ -13,7 +13,7 @@ class Affrendre extends Component {
     componentDidMount(){
       
       
-      axios.get('http://localhost:8080/afficherendre/'+localStorage.getItem('id'))
+      axios.get('https://finaly-s.herokuapp.com/afficherendre/'+localStorage.getItem('id'))
         .then(response => {
           this.setState({ business: response.data });
         })
@@ -60,7 +60,7 @@ class Affrendre extends Component {
                                   {console.log(obj)}
                               </tr>
 
-                          })) : ('')
+                          })) : (<div className="videbe"></div>)
                       }
                   </tbody>
               </table>

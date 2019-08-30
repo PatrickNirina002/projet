@@ -8,7 +8,9 @@ import Inscrire from './inscrire';
 import { confirmAlert } from 'react-confirm-alert'; // Import
 import 'react-confirm-alert/src/react-confirm-alert.css'; // Import css
 import Slider from './slider';
+import Footer from './footer';
 import {connect} from 'react-redux'
+
 class Home extends Component {
 
     constructor(props) {
@@ -19,7 +21,7 @@ class Home extends Component {
 
     }
     componentDidMount() {
-        axios.get('http://localhost:8080/affichertous')
+        axios.get('https://finaly-s.herokuapp.com/affichertous')
             .then(response => {
                 console.log(response.data);
                 this.setState({ profil: response.data });
@@ -68,18 +70,18 @@ class Home extends Component {
 
 
 
-<div>
+<div class="card card-cascade narrower">
 
+<div>
+<img className="ferme" src={'https://finaly-s.herokuapp.com/pic/'+obj.photo} aly=""/>
                       <Link to={"/profilclient/"+obj.id2} id="titrebe" onClick={()=>{
                           localStorage.setItem('idregister',obj.id2)
                           console.log(obj.id2);
                       }}>{obj.garage}</Link><span>  a posté</span>
                       </div>
-<div class="card card-cascade narrower">
-
 
 <div class="view view-cascade overlay">
-<img  class="card-img-top sar"  src={'http://localhost:8080/user/'+obj.image} alt="pdp"/>
+<img  class="card-img-top sar"  src={'https://finaly-s.herokuapp.com/user/'+obj.image} alt="pdp"/>
 <a>
 <div class="mask rgba-white-slight"></div>
 </a>
@@ -162,7 +164,7 @@ return (
 
 
 
-              })) : ('')
+              })) : (<div className="videbe"></div>)
           }
   
 </div>
@@ -175,7 +177,7 @@ return (
       
       </div>
 
-
+      
 
         </div>
     }

@@ -2,7 +2,7 @@
 import React from 'react';
 //import { confirmAlert } from 'react-confirm-alert'; // Import
 import 'react-confirm-alert/src/react-confirm-alert.css';
-
+import { connect } from 'react-redux';
 class Prof extends React.Component {
   constructor(props) {
     super(props);
@@ -12,7 +12,8 @@ class Prof extends React.Component {
       lieu:'',
       contact:'',
       description:'',
-     pho:''
+     pho:'',
+     image:''
 
     };
     this.onChange = this.onChange.bind(this)
@@ -26,6 +27,14 @@ class Prof extends React.Component {
     this.setState({
         [event.target.name]: event.target.value
     })
+}
+componentDidMount() {
+  if(this.props.auth.isAuthenticated==false) {
+      this.props.history.push('/login');
+  }
+  else{
+    
+  }
 }
 
 // componentDidMount(){
@@ -43,17 +52,20 @@ class Prof extends React.Component {
     ev.preventDefault();
 
     const data = new FormData();
-    data.append('pho', this.uploadInput.files[0]);
+    data.append('pho', this.uploadInput1.files[0]);
+   
     data.append('garage',this.state.garage);
     data.append('lieu',this.state.lieu);
     data.append('contact',this.state.contact);
     data.append('description',this.state.description);
-    fetch('http://localhost:8080/prof/'+localStorage.getItem('id'), {
+    data.append('image', this.uploadInput2.files[0]);
+    fetch('https://finaly-s.herokuapp.com/prof/'+localStorage.getItem('id'), {
       method: 'POST',
       body: data,
     }).then((response) => {
       response.json().then((body) => {
-        this.setState({ pho: `http://localhost:8080/prof/${body.pho}` });
+        this.setState({ pho: `https://finaly-s.herokuapp.com/prof/${body.pho}` });
+        this.setState({ image: `https://finaly-s.herokuapp.com/prof/${body.image}` });
         console.log('ity ilay body.fil',body.pho);
        
       });
@@ -64,7 +76,7 @@ class Prof extends React.Component {
   render() {
     return (
       <form onSubmit={this.handleUploadPho }
-       
+      className="zaza"
     >
           <div className="form-group">
           <label>lieu:</label>
@@ -88,8 +100,8 @@ class Prof extends React.Component {
           onChange={this.onChange}
           name="description"  /><br></br>  </div>
       
-          <input id='champ' ref={(ref) => { this.uploadInput = ref; }} type="file" name="pho"/>
-       
+          <input id='champ' ref={(ref) => { this.uploadInput1 = ref; }} type="file" name="pho"/>
+          <input id='champ' ref={(ref) => { this.uploadInput2 = ref; }} type="file" name="image"/>
           <input type="submit" class="fadeIn fourth"   
            
            value="Ajouter" className='bou'/>
@@ -98,4 +110,9 @@ class Prof extends React.Component {
   }
 }
 
-export default Prof;
+const mapStateToProps = (state) => ({
+  auth: state.auth,
+  errors: state.errors
+})
+
+export  default connect(mapStateToProps)(Prof)

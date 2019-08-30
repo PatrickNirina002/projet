@@ -34,7 +34,7 @@ export default class DescriUpd extends Component {
       titre: this.state.titre,
       description: this.state.description
     };
-    axios.put('http://localhost:8080/updDescription/'+localStorage.getItem('idDesc'), obj)
+    axios.put('https://finaly-s.herokuapp.com/updDescription/'+localStorage.getItem('idDesc'), obj)
         .then(res => console.log(res.data));
     
     this.setState({

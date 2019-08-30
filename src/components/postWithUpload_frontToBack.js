@@ -53,12 +53,12 @@ class PostFrontToBack extends React.Component {
     data.append('titre',this.state.titre);
     data.append('description',this.state.description);
     data.append('prix',this.state.prix);
-    fetch('http://localhost:8080/register/'+localStorage.getItem('id'), {
+    fetch('https://finaly-s.herokuapp.com/register/'+localStorage.getItem('id'), {
       method: 'POST',
       body: data,
     }).then((response) => {
       response.json().then((body) => {
-        this.setState({ image: `http://localhost:8080/register/${body.image}` });
+        this.setState({ image: `https://finaly-s.herokuapp.com/register/${body.image}` });
         console.log('ity ilay body.fil',body.image);
        
       });
@@ -68,9 +68,9 @@ class PostFrontToBack extends React.Component {
 
   render() {
     return (
-      <form onSubmit={this.handleUploadImage }
+      <form onSubmit={this.handleUploadImage } className="poste"
        
-    ><div className="form-group">
+    ><div className="form-group ">
         <label>titre:</label>
         <input type="text" id='champ'
         className="form-control"

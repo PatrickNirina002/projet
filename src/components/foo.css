@@ -1,0 +1,74 @@
+.footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    /* Set the fixed height of the footer here */
+    height: 135px;
+  font-size: .9em;
+      padding-bottom: 5px;
+      border-top: 3px solid #31813a;
+      background-color: #1e357b;
+      background:linear-gradient(#f2f2f2, #e6e6e6);
+      color: #333;
+      padding: 15px;
+      line-height: .3;
+  }
+  
+    .footer a {
+        color: #333;
+    }
+    .footer a:hover {
+        color: #48a948;
+        text-decoration: none;
+    }  
+        
+   #hoverFB {
+     background-image: url('https://libapps.s3.amazonaws.com/accounts/108452/images/FB-FindUsonFacebook-online-144bw.png');
+     width: 114px;
+     height: 21px;
+  }
+  
+  #hoverFB:hover {
+      background-image: url('https://libapps.s3.amazonaws.com/accounts/108452/images/FB-FindUsonFacebook-online-144grn.png');
+     width: 114px;
+     height: 21px;
+  }
+  
+  .btn-phillipslib {
+      background-color: #333333;
+      color: #ffffff;
+      border-color: #000000;
+  }
+  
+  .btn-phillipslib:hover {
+      background-color: #48a948;
+      color: #ffffff;
+      border-color: #31813a;
+  }
+  
+  .btn-phillipslib:focus {
+      background-color: #48a948;
+      color: #ffffff;
+      border-color: #31813a;
+  }
+  
+  
+  
+  /* Small Devices, Tablets */
+  @media only screen and (max-width : 768px) {
+      /* your mobile css, change this as you please */
+      .footer {
+    
+    /* Set the fixed height of the footer here */
+    height: 350px;
+  font-size: .9em;
+      padding-bottom: 5px;
+      border-top: 3px solid #31813a;
+      background-color: #1e357b;
+      background:linear-gradient(#f2f2f2, #e6e6e6);
+      color: #333;
+      padding: 15px;
+      line-height: .3;
+  }
+  }
+  

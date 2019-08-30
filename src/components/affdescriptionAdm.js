@@ -17,7 +17,7 @@ import 'react-confirm-alert/src/react-confirm-alert.css'; // Import css
 
     }
     componentDidMount() {
-        axios.get('http://localhost:8080/selrep/'+this.props.match.params._id)
+        axios.get('https://finaly-s.herokuapp.com/selrep/'+this.props.match.params._id)
             .then(response => {
                 console.log(response.data);
                 this.setState({ profil: response.data });
@@ -64,7 +64,7 @@ import 'react-confirm-alert/src/react-confirm-alert.css'; // Import css
 
 
 <div class="view view-cascade overlay">
-<img  class="card-img-top sar"  src={'http://localhost:8080/user/'+obj.image} alt="pdp"/>
+<img  class="card-img-top sar"  src={'https://finaly-s.herokuapp.com/user/'+obj.image} alt="pdp"/>
 <a>
 <div class="mask rgba-white-slight"></div>
 </a>
@@ -98,7 +98,7 @@ import 'react-confirm-alert/src/react-confirm-alert.css'; // Import css
 
 
 
-              })) : ('')
+              })) : (<div className="videbe"></div>)
           }
   
 </div>

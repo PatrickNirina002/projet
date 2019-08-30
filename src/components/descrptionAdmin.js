@@ -20,7 +20,7 @@ import { connect } from 'react-redux';
 
     }
     componentDidMount() {
-        axios.get('http://localhost:8080'+this.props.location.pathname)
+        axios.get('https://finaly-s.herokuapp.com'+this.props.location.pathname)
             .then(response => {
                 console.log(response.data);
                 this.setState({ profil: response.data });
@@ -117,7 +117,7 @@ import { connect } from 'react-redux';
 
 
 
-              })) : ('')
+              })) : (<div className="videbe"></div>)
           }
   
 </div>
@@ -131,7 +131,7 @@ import { connect } from 'react-redux';
 
 
           </div>
-          <div className="col-md-4">
+          <div className="col-md-4 fixe">
           <Route exact path="/descriptionAd/:_id" component={ ImageAdmin } />
           </div>
         </div>

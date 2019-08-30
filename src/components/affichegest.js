@@ -12,7 +12,7 @@ export default class Index extends Component {
     componentDidMount(){
       
       
-      axios.get('http://localhost:8080/affichegestion/'+localStorage.getItem('id'))
+      axios.get('https://finaly-s.herokuapp.com/affichegestion/'+localStorage.getItem('id'))
         .then(response => {
           this.setState({ business: response.data });
         })
@@ -49,16 +49,25 @@ export default class Index extends Component {
                                   {console.log(obj)}
                               </tr>
 
-                          })) : ('')
+                          })) : ("")
                       }
                   </tbody>
               </table>
           </div>
           <div>
           <div className="row">
-          <div className="col-md-9"></div>
+          <div className="col-md-6"></div>
+          <div className="col-md-3">	<button className="btn btn-dark" id="boutons1" onClick={() => {
+            document.getElementById("boutons").style.display = "none";
+            document.getElementById("boutons1").style.display = "none";
+            document.getElementById("formulaire").style.display = "none";
+            window.print();
+            document.getElementById("boutons").style.display = "block";
+            document.getElementById("boutons1").style.display = "block";
+            document.getElementById("formulaire").style.display = "block";
+        }}>Imprimer</button></div>
           <div className="col-md-3">
-          <button className="btn btn-primary" onClick={()=>{
+          <button className="btn btn-primary " id="boutons" onClick={()=>{
             var total=0;
 						for(let i=0;i<this.state.business.length;i++)
 						{
@@ -83,7 +92,7 @@ export default class Index extends Component {
   }
   render() {
       return (
-          <div>
+          < div className="videbe">
               {this.liste()}
           </div>
       );

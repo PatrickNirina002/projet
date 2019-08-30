@@ -44,12 +44,12 @@ class Modifier extends React.Component {
     data.append('titre',this.state.titre);
     data.append('description',this.state.description);
     data.append('prix',this.state.prix);
-    fetch('http://localhost:8080/profil/'+localStorage.getItem('ti'), {
+    fetch('https://finaly-s.herokuapp.com/profil/'+localStorage.getItem('ti'), {
       method: 'PUT',
       body: data,
     }).then((response) => {
       response.json().then((body) => {
-        this.setState({ image: `http://localhost:8080/profil/${body.image}` });
+        this.setState({ image: `https://finaly-s.herokuapp.com/profil/${body.image}` });
         console.log('ity ilay body.fil',body.image);
        
       });

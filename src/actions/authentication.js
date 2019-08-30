@@ -4,7 +4,7 @@ import setAuthToken from '../setAuthToken';
 import jwt_decode from 'jwt-decode';
 
 export const registerUser = (user, history) => dispatch => {
-    axios.post('http://localhost:8080/register', user)
+    axios.post('https://finaly-s.herokuapp.com/register', user)
             .then(res =>  history.push('/login')
                 )
             .catch(err => {
@@ -16,7 +16,7 @@ export const registerUser = (user, history) => dispatch => {
 }
 
 export const loginUser = (user) => dispatch => {
-    axios.post('http://localhost:8080/login', user)
+    axios.post('https://finaly-s.herokuapp.com/login', user)
             .then(res => {
                 const { token } = res.data;
                 console.log(token);
@@ -25,7 +25,7 @@ export const loginUser = (user) => dispatch => {
                 localStorage.setItem('id', res.data.id);
                 //  console.log(res.data);
                  localStorage.setItem('anarana',res.data.name)
-                 
+                 localStorage.setItem('prenom',res.data.prenom)
                  
                 console.log(res.data.name);
                 

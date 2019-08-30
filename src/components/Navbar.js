@@ -7,7 +7,7 @@ import { withRouter } from 'react-router-dom';
 import Slider from './slider'
 import image from './logobe.png'
 import './navba.css'
-import FooterPage from './footer';
+import Foot from './foot';
 // import Chacun from './chacun';
 import { MDBNavbar, MDBNavbarBrand, MDBNavbarNav, MDBNavItem, MDBNavLink, MDBNavbarToggler, MDBCollapse, MDBDropdown,
   MDBDropdownToggle, MDBDropdownMenu, MDBDropdownItem, MDBIcon } from "mdbreact";
@@ -112,9 +112,6 @@ class Navbar extends Component {
         <img src="https://vignette.wikia.nocookie.net/nationstates/images/2/29/WS_Logo.png/revision/latest?cb=20080507063620"/>
       </a>
       <li class="nav-item">
-      <Link class="nav-link sidefrst li" to={"/prof/"+localStorage.getItem('id')}>
-        <span class="textside">Ajouter de Profil</span>
-      </Link>
     </li>
     <li class="nav-item">
       <Link class="nav-link sidefrst li" to={"/affichepho/"+localStorage.getItem('id')}>
@@ -128,7 +125,7 @@ class Navbar extends Component {
     </li>
 
     <li class="nav-item">
-      <Link class="nav-link sidesecnd li"   to="/atelier">
+      <Link class="nav-link sidesecnd li"   to={"/atelier/"+localStorage.getItem('id')}>
         <span class="textside">Ajouter de réparation</span>
       </Link>
     </li>
@@ -152,7 +149,7 @@ class Navbar extends Component {
   
   <ul class="navbar-nav2 ml-auto">
     <li class="dropdown">
-      <a href="#" class="dropdown-toggle" data-toggle="dropdown"><img className="roundedImage" src={'http://localhost:8080/pic/'+this.state.test} alt="Profile image example"/> </a>
+      <a href="#" class="dropdown-toggle" data-toggle="dropdown"> </a>
         <ul class="dropdown-menu">
             <li class="resflset li"><a  onClick={()=>{
               console.log(this.state.test);
@@ -227,6 +224,7 @@ class Navbar extends Component {
  </MDBNavbar>
  </div>
   
+
    
    </div>
 

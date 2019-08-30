@@ -35,7 +35,7 @@ export default class Descri extends Component {
       titre: this.state.titre,
       description: this.state.description
     };
-    axios.post('http://localhost:8080/description/'+localStorage.getItem('ti'), obj)
+    axios.post('https://finaly-s.herokuapp.com/description/'+localStorage.getItem('ti'), obj)
         .then(res => console.log(res.data));
     
     this.setState({
