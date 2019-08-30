@@ -69,7 +69,7 @@ class App extends Component {
                   <Route path="/profil/:_id"  component={Modifier} />
                   <Route exact path="/register/:_id" component={ Chacun } />
                   <switch>
-                    <PrivateRoute exact path="/admin"  component={Vide} />
+                    <Route exact path="/admin"  component={Vide} />
                     
                   </switch>
                   <Route exact path="/prof/:_id" component={ Prof } />
