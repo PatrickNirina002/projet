@@ -40,12 +40,12 @@ class Photo extends React.Component {
 
     const data = new FormData();
     data.append('profil', this.uploadInput.files[0]);
-    fetch('http://localhost:8080/photo/'+localStorage.getItem('id'), {
+    fetch('https://finaly-s.herokuapp.com/photo/'+localStorage.getItem('id'), {
       method: 'POST',
       body: data,
     }).then((response) => {
       response.json().then((body) => {
-        this.setState({ profil: `http://localhost:8080/photo/${body.profil}` });
+        this.setState({ profil: `https://finaly-s.herokuapp.com/photo/${body.profil}` });
         console.log('ity ilay body.fil',body.profil);
        
       });

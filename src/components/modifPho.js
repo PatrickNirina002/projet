@@ -40,12 +40,12 @@ class Modifier extends React.Component {
     const data = new FormData();
     data.append('pho', this.uploadInput.files[0]);
 
-    fetch('http://localhost:8080/profi/'+this.props.match.params._id, {
+    fetch('https://finaly-s.herokuapp.com/profi/'+localStorage.getItem('id'), {
       method: 'PUT',
       body: data,
     }).then((response) => {
       response.json().then((body) => {
-        this.setState({ pho: `http://localhost:8080/profi/${body.pho}` });
+        this.setState({ pho: `https://finaly-s.herokuapp.com/profi/${body.pho}` });
         console.log('ity ilay body.fil',body.pho);
        
       });

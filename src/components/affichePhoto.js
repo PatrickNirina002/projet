@@ -16,7 +16,7 @@ export default class AffPhoto extends Component {
   
 
     componentDidMount() {
-        axios.get('http://localhost:8080'+this.props.location.pathname)
+        axios.get('https://finaly-s.herokuapp.com'+this.props.location.pathname)
             .then(response => {
                 console.log(response.data);
                 this.setState({ profil: response.data });
@@ -52,7 +52,7 @@ export default class AffPhoto extends Component {
       localStorage.setItem('atelier',obj._id);
       
   }}><center>{obj.titre}</center> </h4>
-  <img width="100%" height="300px" src={'http://localhost:8080/photo/'+obj.profil} alt="pdp" />
+  <img width="100%" height="300px" src={'https://finaly-s.herokuapp.com/photo/'+obj.profil} alt="pdp" />
   
  
  

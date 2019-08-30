@@ -60,7 +60,7 @@ import { connect } from 'react-redux';
       type_rep: this.state.type_rep,
       prix: this.state.prix
     };
-    axios.post('http://localhost:8080/gestion/'+localStorage.getItem('id'), obj)
+    axios.post('https://finaly-s.herokuapp.com/gestion/'+localStorage.getItem('id'), obj)
         .then(res => console.log(res.data));
     
     this.setState({
@@ -75,7 +75,7 @@ import { connect } from 'react-redux';
     return (
       <div>
      
-        <div style={{ marginTop: 10 }}>
+        <div style={{ marginTop: 10 }} id="formulaire">
             <form onSubmit={this.onSubmit}>
                 <div className="form-group">
                     <label className="li">Matricule:  </label>

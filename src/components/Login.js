@@ -90,7 +90,7 @@ class Login extends Component {
         // </div>
 
 
-<div class="container h-100 log">
+<div class="container h-100 log faran">
 <div class="d-flex justify-content-center h-100">
     <div class="user_card">
         <div class="d-flex justify-content-center">

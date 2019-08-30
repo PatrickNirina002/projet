@@ -18,7 +18,7 @@ class Profiles extends Component {
   
 
     componentDidMount() {
-        axios.get('http://localhost:8080'+this.props.location.pathname)
+        axios.get('https://finaly-s.herokuapp.com'+this.props.location.pathname)
             .then(response => {
                 console.log(response.data);
                 this.setState({ profil: response.data });
@@ -58,7 +58,7 @@ class Profiles extends Component {
         <div class="col-md-3 col-sm-3 col-xs-12 user-profil-part pull-left">
             <div class="row ">
                 <div class="col-md-12 col-md-12-sm-12 col-xs-12 user-image text-center">
-                <Link to={'/profi/'+obj._id} > <img src={'http://localhost:8080/pic/'+obj.pho} alt="" class="rounded-circle"/></Link>
+                <Link to={'/profi/'+obj._id} > <img src={'https://finaly-s.herokuapp.com/pic/'+obj.pho} alt="" class="rounded-circle"/></Link>
                 </div>
                 <div class="col-md-12 col-sm-12 col-xs-12 user-detail-section1 text-center">
                     <button id="btn-contact"  data-toggle="modal" data-target="#contact" class="btn btn-success btn-block follow">Contactarme</button> 
@@ -220,7 +220,7 @@ class Profiles extends Component {
 
 )
 
-                            })) : ('')
+                            })) : (<div className="videbe"></div>)
                         }
                 
         </div>

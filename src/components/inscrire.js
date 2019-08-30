@@ -53,7 +53,7 @@ export default class Inscrire extends Component {
       tel: this.state.tel,
       datej: this.state.datej
     };
-    axios.post('http://localhost:8080/rendre/'+localStorage.getItem('ti'), obj)
+    axios.post('https://finaly-s.herokuapp.com/rendre/'+localStorage.getItem('ti'), obj)
         .then(res => console.log(res.data));
     
     this.setState({

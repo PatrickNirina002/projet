@@ -11,7 +11,7 @@ export default class ListTous extends Component {
 
     }
     componentDidMount() {
-        axios.get('http://localhost:8080/affichertous')
+        axios.get('https://finaly-s.herokuapp.com/affichertous')
             .then(response => {
                 console.log(response.data._id);
                 this.setState({ profil: response.data });
@@ -44,7 +44,7 @@ export default class ListTous extends Component {
 
   
   <h4 class="card-title">{obj.titre}</h4>
-  <img className='imag' src={'http://localhost:8080/user/'+obj.image} alt="pdp" />
+  <img className='imag' src={'https://finaly-s.herokuapp.com/user/'+obj.image} alt="pdp" />
   <p class="card-text">{obj.description}</p>
   <a  class="btn btn-primary">{obj.date}</a><br/>
   <a data-toggle="tooltip" data-placement="top" title="Add to Cart">  <i class="fas fa-shopping-cart grey-text ml-3"></i> </a>

@@ -7,7 +7,12 @@ body {
   background-color: #d05c62 !important
 }
 #eto{
-  background-color: #262625 !important
+  background-color: #262625 !important;
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 1030;
 }
 
 
@@ -83,7 +88,7 @@ html {
   background-color: #d05c62 !important;
 }
 .log{
-  margin-top: 100px !important
+  margin-top: 200px !important
 }
 .imag{
   width: 100%;
@@ -218,11 +223,11 @@ border-radius: 10px !important;
   font-size:60px !important;
 }
 .espace{
-  margin-top:200px;
+  margin-top:58px;
 }
 .li{
-  font-size: 12px;
-  font-weight: bold;
+  font-size: 15px;
+  
 }
 .roundedImage{
   overflow:hidden;
@@ -245,11 +250,11 @@ border-radius: 10px !important;
 }
 .ferme{
   overflow:hidden;
-  -webkit-border-radius:50px;
-  -moz-border-radius:50px;
-  border-radius:50px;
-  width:50px;
-  height:50px;
+  -webkit-border-radius:30px;
+  -moz-border-radius:30px;
+  border-radius:30px;
+  width:30px;
+  height:30px;
   background-color: red;
 }
 .slid{
@@ -336,4 +341,46 @@ h3{
 .h{
   background-color: dimgray;
  
+}
+.ici{
+  font-size:30px;
+}
+.ad{
+  width: 200px !important;
+
+}
+.titl{
+  font-size: 20px;
+  font-weight: bold;
+  color: #830909;
+}
+#foote{
+  background-color: #262625 !important;
+  background-color: #34475E;
+
+  height: auto !important;
+ 
+}
+.videbe{
+  margin-bottom: 900px !important;
+}
+.registe{
+  margin-top:200px !important;
+}
+.faran{
+  margin-bottom: 300px;
+
+}
+.poste{
+  margin-bottom: 450px !important;
+}
+.zaza{
+  margin-bottom: 400px;
+}
+.sitiregister{
+  margin-top: 300px;
+}
+.propo{
+  font-size: 30px;
+  height: 900px;
 }

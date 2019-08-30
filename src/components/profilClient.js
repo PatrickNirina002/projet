@@ -20,7 +20,7 @@ class Profilpourclient extends Component {
   
 
     componentDidMount() {
-        axios.get('http://localhost:8080'+this.props.location.pathname)
+        axios.get('https://finaly-s.herokuapp.com'+this.props.location.pathname)
             .then(response => {
                 console.log(response.data);
                 this.setState({ profil: response.data });
@@ -62,11 +62,11 @@ class Profilpourclient extends Component {
 		<div class="col-lg-12 col-sm-0">
 
             <div class="card hovercard">
-                <div class="cardheader">
-
-                </div>
+            <div class="col-md-12 col-sm-12 col-xs-12 image-section">
+            <img alt="" src={'https://finaly-s.herokuapp.com/couverture/'+obj.image}/>
+        </div>
                 <div class="avatar">
-                    <img alt="" src={'http://localhost:8080/pic/'+obj.pho}/>
+                    <img alt="" src={'https://finaly-s.herokuapp.com/pic/'+obj.pho}/>
                 </div>
                 <div class="info">
                     <div class="title">
@@ -75,7 +75,7 @@ class Profilpourclient extends Component {
 
                     <p class="li">{obj.description}</p>
                     <div class="li">{obj.contact}</div>
-                    <div class="li">{obj.lieu}</div>
+                    <Link to="/lieu" class="li icon-mob-recherche-garage">{obj.lieu}</Link>
                 </div>
                 <div >
                     <a class="btn btn-primary btn-twitter btn-sm" href="">

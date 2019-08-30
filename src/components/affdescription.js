@@ -19,7 +19,7 @@ class Affdesc extends Component {
 
     }
     componentDidMount() {
-        axios.get('http://localhost:8080'+this.props.location.pathname)
+        axios.get('https://finaly-s.herokuapp.com'+this.props.location.pathname)
             .then(response => {
                 console.log(response.data);
                 this.setState({ profil: response.data });
@@ -81,7 +81,7 @@ class Affdesc extends Component {
 
 
 
-              })) : ('')
+              })) : (<div className="videbe"></div>)
           }
   
 </div>
@@ -95,7 +95,7 @@ class Affdesc extends Component {
 
 
           </div>
-          <div className="col-md-4">
+          <div className="col-md-4 fixe">
           <Route exact path="/affdescription/:_id" component={ Seul } />
           </div>
         </div>

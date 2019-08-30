@@ -27,7 +27,7 @@ body {
   right: 0;
   left: 0;
   z-index: 1030;
-  background: #FFFFFF;
+  background: #262625;;
   height: 60px;
   color: white;
 }
@@ -355,4 +355,10 @@ body.sidenav-toggled .navbar-sidenav .nav-item {
 }
 #coleur{
  color: black;
+}
+#fo{
+ 
+  background: #262625 !important;
+  height: 60px;
+  color: white;
 }
