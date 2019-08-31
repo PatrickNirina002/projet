@@ -8,7 +8,8 @@ class Affrendre extends Component {
 
   constructor(props) {
       super(props);
-      this.state = {business: []};
+      this.state = {business: [],recherche:""};
+      this.onChange = this.onChange.bind(this) 
     }
     componentDidMount(){
       
@@ -27,17 +28,28 @@ class Affrendre extends Component {
           
         }
     }
+    onChange(event) {
+        this.setState({
+            [event.target.name]: event.target.value
+            
+            
+         
+        })
+        console.log(this.state.recherche);
+    }
 
 
 
 
 
     liste() {
-      return <div>
-      
+      return <div className="midina">
+      <div className="row">
+    <div className="col-md-6"></div>  
+    <div className="col-md-6"><input type="text" name="recherche"  class="form-control toto" value={this.state.recherche} onChange={this.onChange} placeholder="Entrer le numéro matricule"/></div></div>
           <div className="table-responsive">
               <table class="table table-bordered" style={{ marginTop: 20 }}>
-                  <thead>
+                  <thead className="thead-dark">
                       <tr>
                           <th className="li">Date</th>
                           <th className="li">Type de réparation</th>
@@ -49,7 +61,7 @@ class Affrendre extends Component {
                   </thead>
                   <tbody>
                       {
-                          (this.state.business.length > 0) ? (this.state.business.map((obj) => {
+                          (this.state.business.length > 0) ? (this.state.business.filter((params)=>params.matricule.indexOf(this.state.recherche) !==-1).map((obj) => {
                               return <tr key={obj._id}>
                                   <td className="li">{obj.date}</td>
                                   <td className="li">{obj.titre}</td>
@@ -75,7 +87,7 @@ class Affrendre extends Component {
           <div className="col-md-9"></div>
           <div className="container  col-md-3 li"><p className="row ss"><span id="total">&nbsp;&nbsp;</span></p></div>
           </div>
-          
+          <div className="ratah"></div>
       </div>
   }
   render() {

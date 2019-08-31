@@ -44,6 +44,9 @@ class Prop extends Component {
               <p class="card-text">
               Grâce au réseau des garages , obtenez une prestation de qualité effectuée à l’aide de l’expertise mécanique de nos réparateurs. 10% de remise sur votre seconde prestation. Nous assurons la mise en place d'un rendez-vous « sur-mesure » en fonction de vos besoins.
               Réalisez dès maintenant votre devis en ligne et obtenez un RDV pour la réparation de votre voiture.
+
+
+              va cliquer accueil pour voir toute le liste de piéce a réparer et faire le rendez-vous.
               </p>
           
         

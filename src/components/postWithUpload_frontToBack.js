@@ -68,9 +68,12 @@ class PostFrontToBack extends React.Component {
 
   render() {
     return (
+      
       <form onSubmit={this.handleUploadImage } className="poste admin"
        
-    ><div className="form-group ">
+    >
+    <div><p className="titi">Compléter toute les champs pour poster votre piéce de réparation</p></div>
+    <div className="form-group ">
         <label>titre:</label>
         <input type="text" id='champ'
         className="form-control"
@@ -86,7 +89,7 @@ class PostFrontToBack extends React.Component {
           name="description"  /><br></br></div>
           <div className="form-group"> 
           <label>Prix:</label>
-        <input type="text" id='champ'
+        <input type="number" id='champ'
         className="form-control"
           value={this.state.value}
           onChange={this.onChange}

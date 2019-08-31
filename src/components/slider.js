@@ -29,38 +29,21 @@ class Slider extends Component {
               <img className="d-block w-100 image" height='600px' src={de} alt="Second slide" />
               <MDBMask overlay="black-slight" />
             </MDBView>
-            <MDBCarouselCaption>
-              <Animation type="zoomInUp" duration="3s">
-                <h3 className="h3-responsive">"Les cours proposés aux particuliers permettent de financer l’achat de matériels et de
-matières premières. "</h3>
-                <p>investiser de materiel</p>
-              </Animation>
-            </MDBCarouselCaption>
+          
           </MDBCarouselItem>
           <MDBCarouselItem itemId="3">
             <MDBView>
               <img className="d-block w-100 image" src={de} height='600px'  width="700px" alt="Third slide" />
               <MDBMask overlay="black-slight" />
             </MDBView>
-            <MDBCarouselCaption>
-              <Animation type="zoomInUp" duration="3s">
-                <h3 className="h3-responsive">"Nos cibles sont les jeunes actifs entre 25 - 35 ans. Des personnes qui veulent apprendre à
-cuisiner afin de manger correctement."</h3>
-                <p>Pour le jeune interessant</p>
-                </Animation>
-            </MDBCarouselCaption>
+        
           </MDBCarouselItem>
           <MDBCarouselItem itemId="4">
             <MDBView>
               <img className="d-block w-100 image" height='600px' src={de} alt="Burnedforest" />
               <MDBMask overlay="black-slight" />
             </MDBView>
-            <MDBCarouselCaption>
-              <Animation type="zoomInUp" duration="3s">
-                <h3 className="h3-responsive">"Veuillez s'incrire l'atelier que vous m'intessez! Merci "</h3>
-                <p>Chacun a de spécialite</p>
-              </Animation>
-            </MDBCarouselCaption>
+           
           </MDBCarouselItem>
         </MDBCarouselInner>
       </MDBCarousel>

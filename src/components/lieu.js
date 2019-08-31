@@ -3,6 +3,7 @@ import {Map, InfoWindow, Marker, GoogleApiWrapper} from 'google-maps-react';
 class Lieu extends Component {
   render() {
     return (
+      <div className="lieu">
       <div className="zoom">
       <Map google={this.props.google} >
  
@@ -13,6 +14,7 @@ class Lieu extends Component {
           
       </InfoWindow>
     </Map>
+      </div>
       </div>
     )
   }

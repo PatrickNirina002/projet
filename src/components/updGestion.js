@@ -97,7 +97,7 @@ import { connect } from 'react-redux';
                 </div>
                 <div className="form-group">
                     <label className="li">prix: </label>
-                    <input type="text"  id='champ'
+                    <input type="number"  id='champ'
                       className="form-control"
                       value={this.state.prix}
                       onChange={this.onChangeprix}

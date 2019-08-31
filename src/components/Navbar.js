@@ -6,6 +6,7 @@ import { logoutUser } from '../actions/authentication';
 import { withRouter } from 'react-router-dom';
 import Slider from './slider'
 import image from './logobe.png'
+import logo from "./logobe.png"
 import './navba.css'
 import Foot from './foot';
 // import Chacun from './chacun';
@@ -109,7 +110,7 @@ class Navbar extends Component {
   <ul class="navbar-nav navbar-sidenav">
 
       <a class="nav-link navlogo text-center" href="index.php">
-        <img src="https://vignette.wikia.nocookie.net/nationstates/images/2/29/WS_Logo.png/revision/latest?cb=20080507063620"/>
+      <img src={logo} class="brand_logo" alt="Logo"/>
       </a>
       <li class="nav-item">
     </li>
@@ -125,7 +126,7 @@ class Navbar extends Component {
     </li>
 
     <li class="nav-item">
-      <Link class="nav-link sidesecnd li"   to={"/atelier/"+localStorage.getItem('id')}>
+      <Link class="nav-link sidesecnd li"   to="/admin">
         <span class="textside">Ajouter de réparation</span>
       </Link>
     </li>
@@ -140,11 +141,7 @@ class Navbar extends Component {
         <span class="textside">Gestion</span>
       </Link>
     </li>
-    <li class="nav-item">
-      <Link to="/admin" class="nav-link sidesix li" href="service.php">
-        <span class="textside">A propos de cette site</span>
-      </Link>
-    </li>
+ 
   </ul>
   
   <ul class="navbar-nav2 ml-auto">

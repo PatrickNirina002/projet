@@ -405,10 +405,32 @@ h3{
 .we{
   height:  50px !important;
   font-size: 20px !important;
+  width: 80% !important;
 }
 .cole{
   color: white !important;
 }
 .red{
   color: rgb(160, 137, 137) !important;
+}
+.toto{
+  height:  50px !important;
+  font-size: 20px !important;
+}
+.midina{
+  margin-top: 60px !important;
+}
+.ratah{
+  margin-top: 800px !important;
+}
+.vvv{
+  margin-top: 500px;
+}
+#fidel{
+  font-size: 25px !important;
+  font-weight: bold !important;
+}
+.titi{
+  font-size:30px !important;
+  color: rgb(138, 36, 44) !important;
 }

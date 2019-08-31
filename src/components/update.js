@@ -84,7 +84,7 @@ class Modifier extends React.Component {
           name="description"  required/><br></br></div>
           <div className="form-group"> 
           <label>Prix:</label>
-        <input type="text"  id='champ'
+        <input type="number"  id='champ'
         className="form-control"
           value={this.state.value}
           onChange={this.onChange}
