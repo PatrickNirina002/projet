@@ -17,10 +17,8 @@ export default class Foot extends Component {
                   <div class="col-md-6 mt-md-0 mt-3">
             
                   
-                    <h5 class="text-uppercase font-weight-bold ">Footer text 1</h5>
-                    <p className="li">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Expedita sapiente sint, nulla, nihil
-                      repudiandae commodi voluptatibus corrupti animi sequi aliquid magnam debitis, maxime quam recusandae
-                      harum esse fugiat. Itaque, culpa?</p>
+                    <h5 class="text-uppercase font-weight-bold ">Footer</h5>
+                    <p className="li">La courroie de distribution sert donc à contrôler le mouvement des pistons et à éviter qu’ils s’entrechoquent. Pour ce faire, la courroie de distribution synchronise le mouvement de ces derniers avec celui des soupapes afin d’obtenir un ensemble cohérent qui ne s’abîme pas par des chocs répétés.</p>
             
                   </div>
                 
@@ -31,10 +29,10 @@ export default class Foot extends Component {
                   <div class="col-md-6 mb-md-0 mb-3">
             
                     
-                    <h5 class="text-uppercase font-weight-bold">Footer text 2</h5>
-                    <p className="li">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Optio deserunt fuga perferendis modi earum
-                      commodi aperiam temporibus quod nulla nesciunt aliquid debitis ullam omnis quos ipsam, aspernatur id
-                      excepturi hic.</p>
+                    <h5 class="text-uppercase font-weight-bold">site gestion de garage</h5>
+                    <p className="li">Si la courroie est en caoutchouc et sert à éviter l’usure du moteur, elle s’abîme elle-même pendant son utilisation. Comme son action est primordiale pour la longévité de votre moteur, il faut savoir veiller sur son état. S’il est trop abîmé, il faudra procéder au changement de la courroie de distribution.
+
+                    Comme la courroie de distribution est protégée, il faut savoir disposer de ses protections pour y accéder. Les signes d’usure, comme le cisaillement des dents ou les craquelures, sont difficilement visibles. Seul un bruit de crissement ou de frottement (signe que la courroie frotte contre une partie du moteur ou qu’un galet est grippé) peut vous alerter.</p>
             
                   </div>
                   
@@ -44,8 +42,8 @@ export default class Foot extends Component {
             
               </div>
             
-              <div class="footer-copyright text-center py-3 li">© 2018 Copyright:
-                <a href="https://mdbootstrap.com/education/bootstrap/" className="li"> MDBootstrap.com</a>
+              <div class="footer-copyright text-center py-3 li">© 2019 Copyright:
+                <a href="https://www.linkedin.com/in/joseph-simon-patrick-ranaivonirina-33446617b/" className="li"> Patrick</a>
               </div>
              
             
