@@ -77,22 +77,7 @@ class Profilpourclient extends Component {
                     <div class="li">{obj.contact}</div>
                     <Link to="/lieu" class="li icon-mob-recherche-garage">{obj.lieu}</Link>
                 </div>
-                <div >
-                    <a class="btn btn-primary btn-twitter btn-sm" href="">
-                        <i class="fa fa-twitter"></i>
-                    </a>
-                    <a class="btn btn-danger btn-sm" rel="publisher"
-                       href="">
-                        <i class="fa fa-google-plus"></i>
-                    </a>
-                    <a class="btn btn-primary btn-sm" rel="publisher"
-                       href="">
-                        <i class="fa fa-facebook"></i>
-                    </a>
-                    <a class="btn btn-warning btn-sm" rel="publisher" href="">
-                        <i class="fa fa-behance"></i>
-                    </a>
-                </div>
+             
              
               <div className="container ">
     

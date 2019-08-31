@@ -261,7 +261,7 @@ border-radius: 10px !important;
   margin-top: -30px;
 }
 .cart{
-  width: 60%;
+  width: 70%;
   background-color: #130a0a05
 }
 .long{
@@ -383,4 +383,54 @@ h3{
 .propo{
   font-size: 30px;
   height: 900px;
+}
+.lii{
+  font-size: 20px;
+}
+.admin{
+  width: 100% !important;
+}
+.back{
+  background-color: #262625 !important;
+}
+#back{
+  background-color: #262625 !important;
+}
+#atao{
+  height: 180px;;
+}
+.v{
+  margin-bottom: 20px;
+}
+.we{
+  height:  50px !important;
+  font-size: 20px !important;
+  width: 80% !important;
+}
+.cole{
+  color: white !important;
+}
+.red{
+  color: rgb(160, 137, 137) !important;
+}
+.toto{
+  height:  50px !important;
+  font-size: 20px !important;
+}
+.midina{
+  margin-top: 60px !important;
+}
+.ratah{
+  margin-top: 800px !important;
+}
+.vvv{
+  margin-top: 500px;
+}
+#fidel{
+  font-size: 25px !important;
+  font-weight: bold !important;
+}
+.titi{
+  font-size:30px !important;
+  color: rgb(138, 36, 44) !important;
 }

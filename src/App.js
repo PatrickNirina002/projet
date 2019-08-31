@@ -32,6 +32,8 @@ import ModifPho from './components/modifPho';
  import Foot from './components/foot';
  import Footer from './components/footer';
  import Lieu from './components/lieu';
+ import Prop from './components/prop';
+ import UpdateProfile from './components/updateProfil';
 // import Slider from './components/slider'
 //import Admin from './components/Admin';
 if(localStorage.jwtToken) {
@@ -61,29 +63,30 @@ class App extends Component {
               <Route exact path="/lieu" component={ Lieu } />
                 <div className="container">
                 
+              <Route exact path="/register/:_id" component={ Chacun } />
+              <Route exact path="/affichepho/:_id" component={ AffichePho } />
+              <Route  path="/afficherendre/:_id" component={ Affrendre } />
+                   <Route path="/slid" component={Prop}/>
                   <Route exact path="/register" component={ Register } />
                   <Route exact path="/login" component={ Login } />
-                  <Route exact path="/atelier/:_id" component={ PostFrontToBack } />
+                  <Route exact path="/admin" component={ PostFrontToBack } />
                   
                  {/* <Route path="/rendre/:_id"  component={Inscrire} />*/}
                   <Route path="/profil/:_id"  component={Modifier} />
-                  <Route exact path="/register/:_id" component={ Chacun } />
-                  <switch>
-                    <Route exact path="/admin"  component={Vide} />
-                    
-                  </switch>
+                  
+              
                   <Route exact path="/prof/:_id" component={ Prof } />
                   <Route exact path="/photo/:_id" component={ Photo } /> 
                   <Route exact path="/affichephoto/:_id" component={ AffPhoto } />
-                  <Route exact path="/affichepho/:_id" component={ AffichePho } />
+                 
                 
                  
                   <Route  path="/gestion/:_id" component={ Gest } />
-                  <Route  path="/afficherendre/:_id" component={ Affrendre } />
+                 
                   <Route  path="/affdescription/:_id" component={ Affdesc } />
                   <Route exact path="/profilclient/:_id" component={ Profilpourclient } />
                   <Route exact path="/descriptionAd/:_id" component={ DescriptionAdmin } />
-                  
+             
                   {/* <Route path="/dash"  component={Admin} ></Route> */}
                 </div>
                 </div>

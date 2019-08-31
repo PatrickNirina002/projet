@@ -46,7 +46,7 @@ class Chacun extends Component {
 
 
 liste() {
-    return <div>
+    return <div className="admin">
 
     <div >
     
