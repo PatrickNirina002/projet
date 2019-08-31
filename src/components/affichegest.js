@@ -44,7 +44,7 @@ export default class Index extends Component {
                   </thead>
                   <tbody>
                       {
-                          (this.state.business.length > 0) ? (this.state.business.map((obj) => {
+                          (this.state.business.length > 0) ? (this.state.business.map((obj,index) => {
                               return <tr key={obj._id}>
                                   <td className="li" onClick={()=>{
                                     console.log(obj._id);
@@ -54,7 +54,7 @@ export default class Index extends Component {
                                   <td className="li">{obj.nom_pro}</td>
                                   <td className="li">{obj.type_rep}</td>
                                   <td className="li">{obj.prix}</td>
-                                  <td className="li"><button onClick={()=>{
+                                  <td className="li"><div className="row"><div className="col-md-4"><button onClick={()=>{
                                     confirmAlert({
                                       customUI: ({ onClose }) => {
                                       return (
@@ -81,10 +81,38 @@ export default class Index extends Component {
                                       );
                                       
                                   }})
-                                }}>Modifier</button>
-                                  <button onClick={()=>{
-
-                                  }}>supprimer</button>
+                                }} class="btn btn-primary">Modifier</button></div>
+                                <div className="col-md-4"> <button class="btn btn-danger" onClick={()=>{
+                                    confirmAlert({
+                                      customUI: ({ onClose }) => {
+                                      return (
+                                      <div className='custom-ui'>
+                                            
+                                          <div class="card card-cascade wider reverse">
+                                          <div className="row">
+                                          <div className="col-md-9"></div>
+                                          <div className="col-md-3"><button onClick={onClose} className="ferme">X</button></div>
+                                          </div>
+                                          <div class="view view-cascade overlay">       
+                                          </div>       
+                                          <div class="card-body card-body-cascade "> 
+                                          <p class="card-text">
+                                          <p>cofirmer la suppresion</p>    
+                                          <button onClick={()=>{
+                                            axios.delete('https://finaly-s.herokuapp.com/deleteGestion/'+obj._id)
+                                          }} className="btn btn-danger">ok</button> 
+                                          </p>    
+                                          </div>
+                                          
+                                          </div>
+                                         
+                                      </div>
+                                      
+                                      
+                                      );
+                                      
+                                  }})
+                                  }}>supprimer</button></div></div>
                                   </td>
                                   {console.log(obj)}
                               </tr>
@@ -96,7 +124,7 @@ export default class Index extends Component {
           </div>
           <div>
           <div className="row">
-          <div className="col-md-6"></div>
+          <div className="col-md-3"></div>
           <div className="col-md-3">	<button className="btn btn-dark" id="boutons1" onClick={() => {
             document.getElementById("boutons").style.display = "none";
             document.getElementById("boutons1").style.display = "none";
@@ -119,16 +147,36 @@ export default class Index extends Component {
 						document.getElementById("total").innerHTML="TOTAL= "+pas+"$";
             console.log(total);
             
-          }}>total</button>
+          }}>total</button></div>
+          <div className="col-md-3"><button className="btn btn-warning" onClick={()=>{
+            for(let i=0;i<this.state.business.length;i++){
+              for(let j=i+1;j<this.state.business.length;j++){
+                if(this.state.business[i].matricule==this.state.business[j].matricule){
+                  this.state.business[i].prix+=this.state.business[j].prix
+                  this.state.business.splice(j,1)
+                      
+                      
+                }
+              }
+            
+              
+            }
+            var tab=[]
+            this.state.business.map(pri=>{
+              tab.push(pri.prix,pri.matricule)
+            })
+            console.log(tab.sort((a,b)=>b-a)[0]); 
+            document.getElementById("total").innerHTML="TOTAL= "+(tab.sort((a,b)=>b-a)[0])+"$";
+          }}>fidelite</button></div>
           </div>
           </div>
-          </div>
+         
           <div className="row">
           <div className="col-md-9"></div>
           <div className="container  col-md-3 li"><p className="row ss"><span id="total">&nbsp;&nbsp;</span></p></div>
           </div>
-          
-      </div>
+          </div>    
+     
   }
   render() {
       return (

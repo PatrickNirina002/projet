@@ -1,6 +1,25 @@
 import React, { Component } from 'react'
 import PropoSlid from './propoSlid'
-export default class Prop extends Component {
+import {connect} from 'react-redux'
+class Prop extends Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+  
+
+    };
+
+  }
+
+  componentDidMount() {
+    if(this.props.auth.isAuthenticated==false) {
+        
+    }
+    else{
+      this.props.history.push('/admin');
+    }
+}
     render() {
         return (
             <div>
@@ -38,3 +57,9 @@ export default class Prop extends Component {
         )
     }
 }
+const mapStateToProps = (state) => ({
+  auth: state.auth,
+  errors: state.errors
+})
+
+export  default connect(mapStateToProps)(Prop)
