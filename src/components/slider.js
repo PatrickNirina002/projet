@@ -16,12 +16,7 @@ class Slider extends Component {
               <img className="d-block w-100 image" height='600px' src={volo} alt="First slide" />
               <MDBMask overlay="black-slight" />
             </MDBView>
-            <MDBCarouselCaption>
-              <Animation type="zoomInUp" duration="3s">
-                <h3 className="h3-responsive">"Nous sommes un centre de formation de cuisine qui propose des ateliers à nos élèves."</h3>
-                <p>A partir de 12 ans, mais aussi à des particuliers</p>
-              </Animation>
-            </MDBCarouselCaption>
+           
           </MDBCarouselItem>
           <MDBCarouselItem itemId="2">
             <MDBView>
