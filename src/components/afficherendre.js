@@ -65,7 +65,7 @@ class Affrendre extends Component {
                               return <tr key={obj._id}>
                                   <td className="li">{obj.date}</td>
                                   <td className="li">{obj.titre}</td>
-                                  <td className="li">{obj.matricule}</td>
+                                  <td className="li">{obj.matricule.toUpperCase()}</td>
                                   <td className="li">{obj.nom}</td>
                                   <td className="li">{obj.tel}</td>
                                   <td className="li">{obj.datej}</td>
