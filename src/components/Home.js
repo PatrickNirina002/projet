@@ -69,7 +69,7 @@ class Home extends Component {
           <div className="row">
           <div className="col-md-6"></div>
           <div className="col-md-6 form-group">
-          <input type="text" name="recherche"  class="form-control we" value={this.state.recherche} onChange={this.onChange} placeholder="Entrer le titre pour le rechercher"/></div>
+          <input type="text" name="recherche"  class="form-control we" value={this.state.recherche} onChange={this.onChange}  placeholder="Entrer le titre pour le rechercher"/></div>
           </div>
           </div>
           <div className="v"></div>
