@@ -70,7 +70,7 @@ liste() {
 
 <div class="card text-center">
   <div class="card-header titl">
-    {obj.titre}
+    {obj.titre.toUpperCase()}
   </div>
   <div class="card-body">
      <div className="row">

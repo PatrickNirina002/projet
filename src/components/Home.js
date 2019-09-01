@@ -77,7 +77,7 @@ class Home extends Component {
                 
           {
               //(this.state.profil.length > 0) ? (this.state.profil.map((obj) => {
-                  (this.state.profil.length > 0) ? (this.state.profil.filter((params)=>params.visibilite).filter((params)=>params.titre.indexOf(this.state.recherche) !==-1).map((obj) => {
+                  (this.state.profil.length > 0) ? (this.state.profil.filter((params)=>params.visibilite).filter((params)=>params.titre.toUpperCase().indexOf(this.state.recherche) !==-1).map((obj) => {
                   return (
                       
 <div class="col-md-4 carde">
@@ -108,7 +108,7 @@ class Home extends Component {
 <div class="card-body card-body-cascade">
 
 
-<h5 class="pink-text pb-2 pt-1"> {obj.titre}</h5>
+<h5 class="pink-text pb-2 pt-1"> {obj.titre.toUpperCase()}</h5>
 
 
 <p class="card-text para">{obj.description.length>120?obj.description.slice(0,100)+'...':obj.description}</p>
