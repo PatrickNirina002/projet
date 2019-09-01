@@ -79,13 +79,19 @@ class Seul extends Component {
 <div class="card-body card-body-cascade">
 
 
-<h5 class="pink-text pb-2 pt-1"><i class="fas fa-utensils"></i> {obj.titre}</h5>
+<h5 class="pink-text pb-2 pt-1"> {obj.titre.toUpperCase()}</h5>
 
 
 <p class="card-text">{obj.description}</p>
 <div className="row">
-<div className="col-md-3"></div>
-<div className="col-md-9"><button className="btn btn-danger long" id="metykosa" onClick={()=>{
+<div className="col-md-7"></div>
+<div className="col-md-5">
+<p class="card-text para loko">{obj.prix} $</p>
+</div>
+</div>
+<div className="row">
+<div className="col-md-2"></div>
+<div className="col-md-10"><button className="btn btn-danger long" id="metykosa" onClick={()=>{
 console.log(obj._id);
 localStorage.setItem('ti',obj._id)
 localStorage.setItem('titre',obj.titre)
