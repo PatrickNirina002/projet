@@ -33,7 +33,7 @@ import { connect } from 'react-redux';
 
   onChangematricule(e) {
     this.setState({
-      matricule: e.target.value
+      matricule: e.target.value.toUpperCase()
     });
   }
   onChangenom_pro(e) {
