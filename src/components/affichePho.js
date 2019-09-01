@@ -158,7 +158,7 @@ class AffichePho extends Component {
                     
                 </div>
                 <div >
-                    <Link class="btn btn-primary btn-twitter btn-sm" to={"/atelier/"+obj._id}>
+                    <Link class="btn btn-primary btn-twitter btn-sm" to="/admin">
                         ajouter de piéce
                     </Link>
                     <Link class="btn btn-danger btn-sm" rel="publisher"
