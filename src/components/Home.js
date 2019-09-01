@@ -108,10 +108,16 @@ class Home extends Component {
 <div class="card-body card-body-cascade">
 
 
-<h5 class="pink-text pb-2 pt-1"><i class="fas fa-utensils"></i> {obj.titre}</h5>
+<h5 class="pink-text pb-2 pt-1"> {obj.titre}</h5>
 
 
-<p class="card-text para">{obj.description.length>120?obj.description.slice(0,110)+'...':obj.description}</p>
+<p class="card-text para">{obj.description.length>120?obj.description.slice(0,100)+'...':obj.description}</p>
+<div className="row">
+<div className="col-md-8"></div>
+<div className="col-md-4">
+<p class="card-text para loko">{obj.prix} $</p>
+</div>
+</div>
 <div className="row">
 <div className="col-md-3"></div>
 <div className="col-md-9"><button className="btn btn-danger long" id="metykosa" onClick={()=>{
