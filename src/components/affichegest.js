@@ -193,7 +193,7 @@ export default class Index extends Component {
           fidel1.sort(function(a,b){return b.prix - a.prix})
           console.log(fidel1);
           if (typeof(fidel1[0])!= "undefined"){
-          document.getElementById("fidel").innerHTML="CLIENT DU FIDEL: "+fidel1[0].matricule.toUpperCase()+", Appartenant à "+fidel1[0].nom_pro+" avec un prix de: "+fidel1[0].prix+" $"
+          document.getElementById("fidel").innerHTML="CLIENT PLUS DE DEPENSE : "+fidel1[0].matricule.toUpperCase()+", Appartenant à "+fidel1[0].nom_pro+" avec un prix de: "+fidel1[0].prix+" $"
           } else {document.getElementById("total").innerHTML="Aucun enregistrement"}
         
 
