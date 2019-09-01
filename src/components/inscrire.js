@@ -31,7 +31,7 @@ export default class Inscrire extends Component {
   }
   onChangematricule(e) {
     this.setState({
-      matricule: e.target.value
+      matricule: e.target.value.toUpperCase()
     })  
   }
   onChangetel(e) {
