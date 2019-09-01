@@ -23,8 +23,8 @@ class Home extends Component {
 
     onChange(event) {
         this.setState({
-            [event.target.name]: event.target.value
-            
+            [event.target.name]: event.target.value.toUpperCase()
+           
             
         })
         console.log(this.state.recherche);

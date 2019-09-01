@@ -70,7 +70,7 @@ class Profilpourclient extends Component {
                 </div>
                 <div class="info">
                     <div class="title">
-                        <a target="_blank" href="https://scripteden.com/">{obj.garage}</a>
+                        <Link target="_blank" to="/lieu">{obj.garage}</Link>
                     </div>
 
                     <p class="li">{obj.description}</p>
