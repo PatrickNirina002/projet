@@ -109,7 +109,7 @@ class Navbar extends Component {
 <div class="collapse navbar-collapse" id="navbarResponsive">
   <ul class="navbar-nav navbar-sidenav">
 
-      <a class="nav-link navlogo text-center" href="index.php">
+      <a class="nav-link navlogo text-center" >
       <img src={logo} class="brand_logo" alt="Logo"/>
       </a>
       <li class="nav-item">
