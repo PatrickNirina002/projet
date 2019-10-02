@@ -43,7 +43,7 @@ class Affrendre extends Component {
 
 
     liste() {
-      return <div className="midina">
+      return <div className="midina admin">
       <div className="row">
     <div className="col-md-6"></div>  
     <div className="col-md-6"><input type="text" name="recherche"  class="form-control toto" value={this.state.recherche} onChange={this.onChange} placeholder="Entrer le numéro matricule"/></div></div>

@@ -261,6 +261,7 @@ border-radius: 10px !important;
   margin-top: -30px;
 }
 .cart{
+  
   width: 70%;
   background-color: #130a0a05
 }
@@ -388,7 +389,8 @@ h3{
   font-size: 20px;
 }
 .admin{
-  width: 100% !important;
+  margin-left:150px;
+  width: 90% !important;
 }
 .back{
   background-color: #262625 !important;

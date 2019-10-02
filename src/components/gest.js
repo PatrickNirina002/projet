@@ -75,7 +75,7 @@ import { connect } from 'react-redux';
     return (
       <div>
      
-        <div style={{ marginTop: 10 }} id="formulaire">
+        <div style={{ marginTop: 10 }} id="formulaire" class='admin'>
             <form onSubmit={this.onSubmit}>
                 <div className="form-group">
                     <label className="li">Matricule:  </label>
@@ -114,10 +114,10 @@ import { connect } from 'react-redux';
                     <input id='champ' type="submit" value="Ajouter" className="btn btn-primary"/>
                 </div>
             </form>
-        </div>
-        
+        </div >
+        <div class='admin'>
         <Index/>
-        
+        </div>
         </div>
     )
   }
